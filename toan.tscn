@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ys2j2o1yghox"]
+[gd_scene format=3 uid="uid://5cb2whn5ab1a"]
 
 [node name="Toan" type="Node2D"]
 
@@ -6,3 +6,5 @@
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Toan"
+
+[node name="Timer" type="Timer" parent="."]
