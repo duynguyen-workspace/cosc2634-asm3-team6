@@ -48,6 +48,10 @@ Dash={
 ]
 }
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [rendering]
 
 renderer/rendering_method="mobile"
