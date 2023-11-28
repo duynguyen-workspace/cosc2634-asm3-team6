@@ -192,3 +192,14 @@ animation = &"run"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 4)
 shape = SubResource("RectangleShape2D_3vh2o")
+
+[node name="DashCooldown" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="DashTime" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="DashTime" to="." method="_on_dash_time_timeout"]

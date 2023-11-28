@@ -1,8 +1,13 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var dash_cooldown = $DashCooldown
+@onready var dash_time = $DashTime
 
-enum PLAYER_STATE { IDLE, RUN, JUMP, FALL, HURT }
+var canDash = false
+var dash = true
+
+enum PLAYER_STATE { IDLE, RUN, HURT }
 
 
 var _state: PLAYER_STATE = PLAYER_STATE.IDLE
@@ -12,7 +17,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 		#input
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
@@ -23,9 +27,17 @@ func _process(delta):
 		animated_sprite_2d.flip_h = false
 		
 	velocity = direction * 250 
-	dash(direction)
+	# Called dash function
+
+	if Input.is_action_just_pressed("Dash") and dash:
+		canDash = true
+		dash_time.start()
+
+	if canDash:
+		startDash(direction)
 	
 	move_and_slide()
+	# Check user state
 	calculate_states()
 
 func calculate_states() -> void:
@@ -47,6 +59,14 @@ func set_state(new_state: PLAYER_STATE) -> void:
 			animated_sprite_2d.play("run")
 			
 			
-func dash(direction) -> void:
-	if Input.is_action_pressed("Dash"):
-		velocity = direction * 400
+func startDash(direction):
+	velocity = direction * 600
+	dash = false
+	
+
+func _on_dash_cooldown_timeout():
+	dash = true
+
+func _on_dash_time_timeout():
+	canDash = false
+	dash_cooldown.start()
