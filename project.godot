@@ -20,6 +20,10 @@ window/size/viewport_width=1024
 window/size/viewport_height=768
 window/stretch/mode="canvas_items"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [rendering]
 
 renderer/rendering_method="mobile"
