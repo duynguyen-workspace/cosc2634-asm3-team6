@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://views/main/main.gd" id="1_xu5w2"]
 [ext_resource type="Texture2D" uid="uid://toineak2105w" path="res://assets/images/main_background.png" id="2_ic21d"]
-[ext_resource type="LabelSettings" uid="uid://cl3jjxrtu7dfi" path="res://assets/fonts/title_120.tres" id="3_smeql"]
+[ext_resource type="LabelSettings" uid="uid://dwgu4wn2trwgu" path="res://assets/fonts/title_120.tres" id="3_smeql"]
 [ext_resource type="Texture2D" uid="uid://bfgqh27ok316o" path="res://assets/images/wood_button_normal.png" id="4_aswlh"]
 [ext_resource type="Texture2D" uid="uid://uh1fpopiv7tj" path="res://assets/images/wood_button_pressed.png" id="5_xhvd4"]
 [ext_resource type="Texture2D" uid="uid://bo7oh0k6imlwp" path="res://assets/images/wood_button_hover.png" id="6_txs6u"]
@@ -137,5 +137,3 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/MC/VB/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MC/VB/OptionsButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/MC/VB/ExitButton" to="." method="_on_play_button_pressed"]

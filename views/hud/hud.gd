@@ -3,7 +3,8 @@ extends Control
 @onready var score_label = $MC/HB/VB/ScoreLabel
 @onready var timer_label = $MC/HB/VB/TimerLabel
 @onready var color_rect = $ColorRect
-@onready var vb_game_over = $ColorRect/VB_GameOver
+@onready var mc_game_over = $ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,4 +30,4 @@ func on_level_complete() -> void:
 func on_game_over() -> void:
 	get_tree().paused = true
 	color_rect.visible = true
-	vb_game_over.visible = true
+	mc_game_over.visible = true
