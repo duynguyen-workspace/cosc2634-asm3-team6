@@ -126,7 +126,7 @@ func set_state(new_state: ENEMY_STATE) -> void:
 			set_nav_to_player()
 		ENEMY_STATE.CHASING:
 			SoundManager.play_gasp(sound)
-			animation_player.play("alert")
+			animation_player.play("chase")
 
 func update_state() -> void:
 	var new_state = _state

@@ -11,7 +11,6 @@ var _target_position: Vector2 = Vector2.ZERO
 func _ready():
 	look_at(_target_position)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += SPEED * delta * _travel_direction
@@ -21,7 +20,6 @@ func init(target: Vector2, start_pos: Vector2) -> void:
 	_target_position = target
 	global_position = start_pos
 	
-
 func create_explosion():
 	var explosion = boom_scene.instantiate()
 	explosion.global_position = global_position
