@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://cjj6m416gm3re"]
 
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_lt2t8"]
+[ext_resource type="Script" path="res://models/characters/player/player.gd" id="1_65km6"]
 [ext_resource type="Texture2D" uid="uid://cpx27s38ky51t" path="res://assets/players/Idle (32x32).png" id="2_bq6x1"]
 [ext_resource type="Texture2D" uid="uid://8am0eyu1cqe1" path="res://assets/players/Run (32x32).png" id="3_8y6ai"]
 
@@ -179,10 +179,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vh2o"]
-size = Vector2(19, 22)
+size = Vector2(35, 50)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_lt2t8")
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(0.4, 0.4)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_65km6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
@@ -190,7 +193,6 @@ sprite_frames = SubResource("SpriteFrames_vt1di")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 4)
 shape = SubResource("RectangleShape2D_3vh2o")
 
 [node name="DashCooldown" type="Timer" parent="."]

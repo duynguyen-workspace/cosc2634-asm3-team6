@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var dash_cooldown = $DashCooldown
 @onready var dash_time = $DashTime
@@ -9,13 +11,11 @@ var dash = true
 
 enum PLAYER_STATE { IDLE, RUN, HURT }
 
-
 var _state: PLAYER_STATE = PLAYER_STATE.IDLE
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
 
 func _process(delta):
 		#input

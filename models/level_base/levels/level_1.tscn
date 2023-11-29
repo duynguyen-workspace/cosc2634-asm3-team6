@@ -1,6 +1,6 @@
-[gd_scene load_steps=72 format=3 uid="uid://cqj5rortidfyt"]
+[gd_scene load_steps=76 format=3 uid="uid://cqj5rortidfyt"]
 
-[ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://level_base/level_base.tscn" id="1_rk50s"]
+[ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
 [ext_resource type="Texture2D" uid="uid://ccovpiwcd3rwm" path="res://assets/tiles/tilemap.png" id="2_ywltu"]
 [ext_resource type="Texture2D" uid="uid://d0l7kxiia5cdy" path="res://assets/tiles/TX Tileset Grass.png" id="4_iw34s"]
@@ -36,6 +36,9 @@
 [ext_resource type="Texture2D" uid="uid://c7jwmakrxbtdj" path="res://assets/tiles/Interiors_free_16x16.png" id="25_hve2y"]
 [ext_resource type="Texture2D" uid="uid://d1jl5flgu1lel" path="res://assets/tiles/Serene_Village_16x16.png" id="28_sa110"]
 [ext_resource type="Texture2D" uid="uid://c1as1acv84eud" path="res://assets/spritesheets/beach/Beach Tileset.png" id="29_e06dd"]
+[ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="37_h3dhy"]
+[ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="38_mhpo2"]
+[ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="39_okr5h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yldi"]
 texture = ExtResource("2_ywltu")
@@ -30205,7 +30208,12 @@ sources/18 = SubResource("TileSetAtlasSource_hvmsj")
 sources/32 = SubResource("TileSetAtlasSource_sjwup")
 sources/33 = SubResource("TileSetAtlasSource_vbifs")
 
-[node name="Level_1" instance=ExtResource("1_rk50s")]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cm2dk"]
+vertices = PackedVector2Array(679, 445, 960, 95, 956, 631, 865, 638, 652, 491, 656, 349, 653, 245, 825, 64, 403, 66, 553, 190, 274, 176, 280, 212, 284, 372, 244, 369, 155, 225, 173, 150, 239, 79, 242, 463, 85, 600, 82, 225, 285, 461, 288, 491, 135, 683, 860, 681, 559, 242)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(1, 0, 5, 6, 7), PackedInt32Array(8, 7, 6, 9), PackedInt32Array(10, 11, 12, 13, 14, 15, 16), PackedInt32Array(17, 18, 19, 14, 13), PackedInt32Array(18, 17, 20, 21, 22), PackedInt32Array(4, 3, 23, 22, 21), PackedInt32Array(10, 16, 8, 9), PackedInt32Array(9, 6, 24)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(173, 150, 239, 79, 403, 66, 825, 64, 960, 95, 956, 631, 865, 638, 860, 681, 135, 683, 85, 600, 82, 225, 155, 225), PackedVector2Array(280, 212, 284, 372, 244, 369, 242, 463, 285, 461, 288, 491, 652, 491, 679, 445, 656, 349, 653, 245, 559, 242, 553, 190, 274, 176)])
+
+[node name="Level1" instance=ExtResource("1_rk50s")]
 
 [node name="TileMap" parent="." index="0"]
 tile_set = SubResource("TileSet_sd8bh")
@@ -30236,3 +30244,29 @@ layer_3/tile_data = PackedInt32Array(1245235, 720927, 12, 1179701, 720927, 14, 1
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="1"]
 stream = ExtResource("2_05wef")
 autoplay = true
+
+[node name="Player" parent="." index="2" instance=ExtResource("37_h3dhy")]
+position = Vector2(207, 183)
+
+[node name="Boss" parent="." index="3" instance=ExtResource("38_mhpo2")]
+position = Vector2(561, 530)
+patrol_points = NodePath("../EnemyPaths/BossPath")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="4"]
+navigation_polygon = SubResource("NavigationPolygon_cm2dk")
+
+[node name="EnemyPaths" type="Node2D" parent="." index="5"]
+
+[node name="BossPath" type="Node2D" parent="EnemyPaths" index="0"]
+
+[node name="Waypoint" parent="EnemyPaths/BossPath" index="0" instance=ExtResource("39_okr5h")]
+position = Vector2(561, 534)
+
+[node name="Waypoint2" parent="EnemyPaths/BossPath" index="1" instance=ExtResource("39_okr5h")]
+position = Vector2(695, 528)
+
+[node name="Waypoint3" parent="EnemyPaths/BossPath" index="2" instance=ExtResource("39_okr5h")]
+position = Vector2(694, 630)
+
+[node name="Waypoint4" parent="EnemyPaths/BossPath" index="3" instance=ExtResource("39_okr5h")]
+position = Vector2(563, 619)

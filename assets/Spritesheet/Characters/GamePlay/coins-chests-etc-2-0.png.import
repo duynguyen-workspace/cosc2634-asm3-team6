@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctougw7cgkxf3"
-path="res://.godot/imported/coins-chests-etc-2-0.png-e421314f4cf8fd9985d0b1a64cd4dec2.ctex"
+path="res://.godot/imported/coins-chests-etc-2-0.png-815258253c7bf1e4137517f5f1c7c3b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Spritesheet/GamePlay/coins-chests-etc-2-0.png"
-dest_files=["res://.godot/imported/coins-chests-etc-2-0.png-e421314f4cf8fd9985d0b1a64cd4dec2.ctex"]
+source_file="res://assets/Spritesheet/Characters/GamePlay/coins-chests-etc-2-0.png"
+dest_files=["res://.godot/imported/coins-chests-etc-2-0.png-815258253c7bf1e4137517f5f1c7c3b7.ctex"]
 
 [params]
 
