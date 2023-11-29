@@ -97,7 +97,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.192157, 0.301961, 0.192157, 0.207843)
 
-[node name="MC" type="MarginContainer" parent="ColorRect"]
+[node name="MC_EndGame" type="MarginContainer" parent="ColorRect"]
 custom_minimum_size = Vector2(583, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -112,14 +112,14 @@ offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MC"]
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MC_EndGame"]
 custom_minimum_size = Vector2(583, 428)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("7_ai1du")
 
-[node name="MC" type="MarginContainer" parent="ColorRect/MC/NinePatchRect"]
+[node name="MC_GameOver" type="MarginContainer" parent="ColorRect/MC_EndGame/NinePatchRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,48 +127,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VB_GameOver" type="VBoxContainer" parent="ColorRect/MC/NinePatchRect/MC"]
+[node name="VB_GameOver" type="VBoxContainer" parent="ColorRect/MC_EndGame/NinePatchRect/MC_GameOver"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="GameOverLabel" type="Label" parent="ColorRect/MC/NinePatchRect/MC/VB_GameOver"]
+[node name="GameOverLabel" type="Label" parent="ColorRect/MC_EndGame/NinePatchRect/MC_GameOver/VB_GameOver"]
 layout_mode = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_oqe22")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="ColorRect/MC/NinePatchRect/MC/VB_GameOver"]
+[node name="Control" type="Control" parent="ColorRect/MC_EndGame/NinePatchRect/MC_GameOver/VB_GameOver"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="ColorRect/MC/NinePatchRect/MC/VB_GameOver"]
+[node name="Label2" type="Label" parent="ColorRect/MC_EndGame/NinePatchRect/MC_GameOver/VB_GameOver"]
 layout_mode = 2
 text = "Final Score: 00000"
 label_settings = SubResource("LabelSettings_8yodh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VB_Buttons" type="VBoxContainer" parent="ColorRect/MC"]
+[node name="VB_Buttons" type="VBoxContainer" parent="ColorRect/MC_EndGame"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="HB_Buttons" type="HBoxContainer" parent="ColorRect/MC/VB_Buttons"]
+[node name="HB_Buttons" type="HBoxContainer" parent="ColorRect/MC_EndGame/VB_Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
-[node name="TryAgainButton" type="TextureButton" parent="ColorRect/MC/VB_Buttons/HB_Buttons"]
+[node name="TryAgainButton" type="TextureButton" parent="ColorRect/MC_EndGame/VB_Buttons/HB_Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("9_5l51e")
 
-[node name="LevelSelectionButton" type="TextureButton" parent="ColorRect/MC/VB_Buttons/HB_Buttons"]
+[node name="LevelSelectionButton" type="TextureButton" parent="ColorRect/MC_EndGame/VB_Buttons/HB_Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("10_ypa61")
 
-[node name="MainButton" type="TextureButton" parent="ColorRect/MC/VB_Buttons/HB_Buttons"]
+[node name="MainButton" type="TextureButton" parent="ColorRect/MC_EndGame/VB_Buttons/HB_Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("11_3ctqv")
