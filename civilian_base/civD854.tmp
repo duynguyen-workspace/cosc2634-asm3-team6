@@ -15,5 +15,4 @@ autostart = true
 [node name="NavAgent" type="NavigationAgent2D" parent="."]
 
 [connection signal="timeout" from="CivSpawnTimer" to="." method="_on_civ_spawn_timer_timeout"]
-[connection signal="target_reached" from="NavAgent" to="." method="_on_nav_agent_target_reached"]
 [connection signal="velocity_computed" from="NavAgent" to="." method="_on_nav_agent_velocity_computed"]
