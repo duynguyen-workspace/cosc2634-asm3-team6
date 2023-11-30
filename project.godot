@@ -10,15 +10,10 @@ config_version=5
 
 [application]
 
-config/name="COSC2634 - Educational Game Project"
+config/name="Edu Game I Swear"
+run/main_scene="res://test_map.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_width=1024
-window/size/viewport_height=768
-window/stretch/mode="canvas_items"
 
 [rendering]
 

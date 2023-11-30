@@ -1,0 +1,120 @@
+[gd_scene load_steps=19 format=3 uid="uid://d0sunmqy0t4nm"]
+
+[ext_resource type="PackedScene" uid="uid://dfgtlo7qi3pad" path="res://civilian_base/civilian_base.tscn" id="1_w066k"]
+[ext_resource type="Texture2D" uid="uid://bxrsotq2wv8y7" path="res://assets/Enemies/Chicken/Run (32x34).png" id="2_11vfk"]
+[ext_resource type="Shape2D" uid="uid://dkdvjmrk3x7c8" path="res://chicken/chicken_collision_shape.tres" id="3_da21b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr5ay"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf06u"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i26ym"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmlcp"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eotmp"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w62b6"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fl8h"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dk7v"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vow6f"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eej0d"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(288, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyjfu"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(320, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2y1t"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(352, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv2j6"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(384, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1txd"]
+atlas = ExtResource("2_11vfk")
+region = Rect2(416, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kd5i6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr5ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf06u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i26ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmlcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eotmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w62b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fl8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dk7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vow6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eej0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyjfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2y1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv2j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1txd")
+}],
+"loop": true,
+"name": &"run",
+"speed": 24.0
+}]
+
+[node name="ChickenCiv" instance=ExtResource("1_w066k")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_kd5i6")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+shape = ExtResource("3_da21b")
