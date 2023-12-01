@@ -1,0 +1,129 @@
+[gd_scene load_steps=19 format=3 uid="uid://b134328fw3drj"]
+
+[ext_resource type="Script" path="res://Chicken.gd" id="1_xxngp"]
+[ext_resource type="Texture2D" uid="uid://bxrsotq2wv8y7" path="res://assets/Enemies/Chicken/Run (32x34).png" id="2_hm622"]
+[ext_resource type="Shape2D" uid="uid://dkdvjmrk3x7c8" path="res://chicken/chicken_collision_shape.tres" id="3_hqfd4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tife"]
+atlas = ExtResource("2_hm622")
+region = Rect2(0, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt4np"]
+atlas = ExtResource("2_hm622")
+region = Rect2(32, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4q5q"]
+atlas = ExtResource("2_hm622")
+region = Rect2(64, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6ig0"]
+atlas = ExtResource("2_hm622")
+region = Rect2(96, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqdqw"]
+atlas = ExtResource("2_hm622")
+region = Rect2(128, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56dwa"]
+atlas = ExtResource("2_hm622")
+region = Rect2(160, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g4s6"]
+atlas = ExtResource("2_hm622")
+region = Rect2(192, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2m3v"]
+atlas = ExtResource("2_hm622")
+region = Rect2(224, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baxj4"]
+atlas = ExtResource("2_hm622")
+region = Rect2(256, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xctfg"]
+atlas = ExtResource("2_hm622")
+region = Rect2(288, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk2wa"]
+atlas = ExtResource("2_hm622")
+region = Rect2(320, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ql6y"]
+atlas = ExtResource("2_hm622")
+region = Rect2(352, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yughd"]
+atlas = ExtResource("2_hm622")
+region = Rect2(384, 0, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkp01"]
+atlas = ExtResource("2_hm622")
+region = Rect2(416, 0, 32, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rye00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tife")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt4np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4q5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6ig0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqdqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56dwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g4s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2m3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baxj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xctfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk2wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ql6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yughd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkp01")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Chicken" type="PathFollow2D"]
+script = ExtResource("1_xxngp")
+path_points = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rye00")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+shape = ExtResource("3_hqfd4")
+
+[node name="CivSpawnTimer" type="Timer" parent="."]
+
+[node name="CivHolder" type="Node" parent="."]
+
+[node name="NavAgent" type="NavigationAgent2D" parent="."]
+
+[connection signal="velocity_computed" from="NavAgent" to="." method="_on_nav_agent_velocity_computed"]
