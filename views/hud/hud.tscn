@@ -3,10 +3,10 @@
 [ext_resource type="FontFile" uid="uid://dfsl4cx6pxvd0" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_qsimt"]
 [ext_resource type="Script" path="res://views/hud/hud.gd" id="1_w5gwf"]
 [ext_resource type="Texture2D" uid="uid://cx6385tkjebh0" path="res://assets/images/options_level.png" id="2_2qh27"]
-[ext_resource type="PackedScene" uid="uid://b8n7tcbvq0m4i" path="res://models/healthbar/health_bar.tscn" id="2_yfiw2"]
 [ext_resource type="Texture2D" uid="uid://beck0hh5tfoic" path="res://assets/images/options_level_hover.png" id="3_gyrgp"]
 [ext_resource type="Texture2D" uid="uid://bun7niumrmgir" path="res://assets/images/options_level_pressed.png" id="3_h8jpj"]
 [ext_resource type="FontFile" uid="uid://dp47f104lvviw" path="res://assets/fonts/Bestoom Bold.ttf" id="4_mjeg0"]
+[ext_resource type="PackedScene" uid="uid://o6byjlurod6p" path="res://models/healthbar/health_bar.tscn" id="5_c5rj8"]
 [ext_resource type="Texture2D" uid="uid://dr376q1gdh4t3" path="res://assets/images/wood_panel.png" id="7_ai1du"]
 [ext_resource type="LabelSettings" uid="uid://c05qpwebwypgf" path="res://assets/fonts/end_menu_80.tres" id="8_2hyhf"]
 [ext_resource type="Texture2D" uid="uid://dclg7ms31f7co" path="res://assets/images/try_again_button.png" id="9_5l51e"]
@@ -72,14 +72,14 @@ texture_normal = ExtResource("2_2qh27")
 texture_pressed = ExtResource("3_h8jpj")
 texture_hover = ExtResource("3_gyrgp")
 
-[node name="HealthBar" parent="MC/HB" instance=ExtResource("2_yfiw2")]
-custom_minimum_size = Vector2(700, 18)
+[node name="HealthBar" parent="MC/HB" instance=ExtResource("5_c5rj8")]
+custom_minimum_size = Vector2(695, 18)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
+value = 95.0
 
 [node name="VB" type="VBoxContainer" parent="MC/HB"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="ScoreLabel" type="Label" parent="MC/HB/VB"]
 layout_mode = 2
@@ -96,6 +96,7 @@ label_settings = SubResource("LabelSettings_fstfp")
 horizontal_alignment = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -158,7 +159,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="ScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver/VB"]
+[node name="FinalScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver/VB"]
 layout_mode = 2
 text = "Your Score: 00000"
 label_settings = SubResource("LabelSettings_8yodh")
@@ -188,14 +189,14 @@ label_settings = ExtResource("8_2hyhf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted/VB"]
+[node name="FinalScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted/VB"]
 layout_mode = 2
 text = "Your Score: 00000"
 label_settings = SubResource("LabelSettings_8yodh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HighScore" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted/VB"]
+[node name="HighScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted/VB"]
 layout_mode = 2
 text = "High Score: 00000"
 label_settings = ExtResource("10_sclsb")
@@ -224,3 +225,7 @@ texture_normal = ExtResource("10_ypa61")
 [node name="MainButton" type="TextureButton" parent="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons"]
 layout_mode = 2
 texture_normal = ExtResource("11_3ctqv")
+
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/MainButton" to="." method="_on_main_button_pressed"]

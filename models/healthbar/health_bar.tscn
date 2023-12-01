@@ -1,13 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8n7tcbvq0m4i"]
+[gd_scene load_steps=5 format=3 uid="uid://o6byjlurod6p"]
 
-[ext_resource type="Texture2D" uid="uid://dbfvkdv5bl28l" path="res://assets/images/square_shadow.png" id="1_oxmci"]
-[ext_resource type="Texture2D" uid="uid://biy312k313ewu" path="res://assets/images/progress_ph.png" id="2_a5ipo"]
-[ext_resource type="Script" path="res://models/healthbar/healthbar.gd" id="3_bdpyy"]
+[ext_resource type="Script" path="res://models/healthbar/health_bar.gd" id="1_avhwd"]
+[ext_resource type="Texture2D" uid="uid://d0t2378xb3teq" path="res://assets/images/heart__1_-removebg-preview (1) (1).png" id="2_8ssax"]
 
-[node name="HealthBar" type="TextureProgressBar"]
-size_flags_horizontal = 0
-value = 50.0
-nine_patch_stretch = true
-texture_under = ExtResource("1_oxmci")
-texture_progress = ExtResource("2_a5ipo")
-script = ExtResource("3_bdpyy")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q731s"]
+bg_color = Color(0.384314, 0.384314, 0.384314, 0.556863)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.74902)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbtw8"]
+bg_color = Color(0.227451, 0.882353, 0.235294, 0.631373)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="HealthBar" type="ProgressBar"]
+offset_right = 687.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_q731s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_pbtw8")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_avhwd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 659.0
+offset_top = -8.0
+offset_right = 709.0
+offset_bottom = 38.0
+texture = ExtResource("2_8ssax")
+
+[connection signal="died" from="." to="." method="_on_died"]
