@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://clmxpcdsn3843"]
+
+[ext_resource type="Script" path="res://controllers/score_manager.gd" id="1_fgj1e"]
+[ext_resource type="PackedScene" uid="uid://dgki2v3a3l8di" path="res://score/label.tscn" id="2_8f1p0"]
+
+[node name="ScoreManager" type="Node2D"]
+script = ExtResource("1_fgj1e")
+
+[node name="Label" parent="." instance=ExtResource("2_8f1p0")]
+
+[node name="ScoreLabel" parent="." instance=ExtResource("2_8f1p0")]
+offset_left = 206.0
+offset_top = 21.0
+offset_right = 332.0
+offset_bottom = 57.0
+text = ""
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
