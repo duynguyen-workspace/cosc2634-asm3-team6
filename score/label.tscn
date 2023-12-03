@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgki2v3a3l8di"]
+
+[ext_resource type="FontFile" uid="uid://db30guyej27gh" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_mhfxj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qmwkg"]
+font = ExtResource("1_mhfxj")
+font_size = 32
+
+[node name="Label" type="Label"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 146.0
+offset_bottom = 48.0
+text = "Trash collected:"
+label_settings = SubResource("LabelSettings_qmwkg")
