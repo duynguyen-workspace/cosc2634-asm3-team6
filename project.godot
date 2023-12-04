@@ -12,7 +12,6 @@ config_version=5
 
 config/name="COSC2634 - Educational Game Project"
 config/features=PackedStringArray("4.1", "Mobile")
-config/icon="res://icon.png"
 
 [autoload]
 
