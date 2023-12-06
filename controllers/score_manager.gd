@@ -19,8 +19,8 @@ func on_correct_trash_collected() -> void:
 
 func win_check() -> void:
 	if trash_collected >= trash_goal:
-		SignalController.on_level_complete.emit(true)
+		SignalController.on_level_complete.emit()
 
-func lose_check() -> void:
-	SignalController.on_game_over.emit(true)
+func lose() -> void:
+	SignalController.on_game_over.emit()
 
