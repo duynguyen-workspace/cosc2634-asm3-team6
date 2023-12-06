@@ -14,8 +14,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalController.on_level_complete.connect(on_level_complete)
-	SignalController.on_game_over.connect(on_game_over)
+	SignalManager.on_level_completed.connect(on_level_completed)
+	SignalManager.on_game_over.connect(on_game_over)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,7 +23,7 @@ func _process(delta):
 	#if Input.is_action_just_pressed("game_over") == true:
 	#	on_game_over()
 	if Input.is_action_just_pressed("level_completed") == true:
-		on_level_complete()
+		on_level_completed()
 		
 		
 
@@ -32,7 +32,7 @@ func show_hud() -> void:
 	color_rect.visible = true
 
 
-func on_level_complete() -> void:
+func on_level_completed() -> void:
 	show_hud()
 	mc_level_completed.visible = true
 	get_tree().paused = false
@@ -45,11 +45,11 @@ func on_game_over() -> void:
 
 
 func _on_try_again_button_pressed():
-	GameManager.load_level_scene()
+	GameManager.load_main_scene()
 
 
 func _on_level_selection_button_pressed():
-	pass # Replace with function body.
+	GameManager.load_selection_scene()
 
 
 func _on_main_button_pressed():

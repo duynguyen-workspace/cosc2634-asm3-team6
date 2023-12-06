@@ -75,7 +75,7 @@ texture_hover = ExtResource("3_gyrgp")
 [node name="HealthBar" parent="MC/HB" instance=ExtResource("5_c5rj8")]
 custom_minimum_size = Vector2(695, 18)
 layout_mode = 2
-value = 95.0
+value = 60.0
 
 [node name="VB" type="VBoxContainer" parent="MC/HB"]
 layout_mode = 2

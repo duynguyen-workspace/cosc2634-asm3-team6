@@ -13,7 +13,6 @@ const COLOR_DANGER: Color = Color("#cc0000")
 const COLOR_MIDDLE: Color = Color("#ff9900")
 const COLOR_GOOD: Color = Color("#33cc33")
 
-var bar = StyleBoxFlat.new()
 var health = StyleBoxFlat.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -30,16 +29,6 @@ func _ready():
 	health.corner_radius_bottom_left = 4
 	health.corner_radius_bottom_right = 4
 	health.border_color = Color("cccccc00")
-	add_theme_stylebox_override("background", bar)
-	bar.border_width_top = 1
-	bar.border_width_bottom = 1
-	bar.border_width_left = 1
-	bar.border_width_right = 1
-	bar.corner_radius_top_left = 4
-	bar.corner_radius_top_right = 4
-	bar.corner_radius_bottom_left = 4
-	bar.corner_radius_bottom_right = 4
-	bar.border_color = Color("ffffffbf")
 	set_color()
 
 
@@ -72,4 +61,4 @@ func take_damage(v: int) -> void:
 
 
 func _on_died():
-	SignalController.on_game_over.emit()
+	SignalManager.on_game_over.emit()

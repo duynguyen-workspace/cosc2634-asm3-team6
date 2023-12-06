@@ -29,7 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
@@ -40,11 +40,15 @@ size_flags_vertical = 4
 
 [node name="Title" type="Label" parent="CanvasLayer/MC/VB"]
 layout_mode = 2
-text = "Junk 
-Jamboree"
+text = "Waste Warrior"
 label_settings = ExtResource("3_smeql")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/MC/VB"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="PlayButton" type="TextureButton" parent="CanvasLayer/MC/VB"]
 layout_mode = 2
@@ -72,7 +76,7 @@ label_settings = ExtResource("7_mk0kx")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OptionsButton" type="TextureButton" parent="CanvasLayer/MC/VB"]
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer/MC/VB"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -80,7 +84,7 @@ texture_normal = ExtResource("4_aswlh")
 texture_pressed = ExtResource("5_xhvd4")
 texture_hover = ExtResource("6_txs6u")
 
-[node name="Label" type="Label" parent="CanvasLayer/MC/VB/OptionsButton"]
+[node name="Label" type="Label" parent="CanvasLayer/MC/VB/SettingsButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,7 +97,7 @@ offset_right = 25.0
 offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Options"
+text = "Settings"
 label_settings = ExtResource("7_mk0kx")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -137,3 +141,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/MC/VB/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MC/VB/ExitButton" to="." method="_on_exit_button_pressed"]
