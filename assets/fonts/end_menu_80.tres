@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c05qpwebwypgf"]
+
+[ext_resource type="FontFile" uid="uid://dp47f104lvviw" path="res://assets/fonts/Bestoom Bold.ttf" id="1_rvs61"]
+
+[resource]
+font = ExtResource("1_rvs61")
+font_size = 80
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)

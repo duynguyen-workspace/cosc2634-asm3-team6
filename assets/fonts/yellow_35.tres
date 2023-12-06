@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://fmjiodbr65mw"]
+
+[ext_resource type="FontFile" uid="uid://dp47f104lvviw" path="res://assets/fonts/Bestoom Bold.ttf" id="1_rlath"]
+
+[resource]
+font = ExtResource("1_rlath")
+font_size = 35
+font_color = Color(1, 1, 0.223529, 1)
+outline_size = 4
+outline_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
