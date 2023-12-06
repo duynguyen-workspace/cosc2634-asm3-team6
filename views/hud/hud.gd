@@ -45,7 +45,7 @@ func on_game_over() -> void:
 
 
 func _on_try_again_button_pressed():
-	GameManager.load_main_scene()
+	get_tree().reload_current_scene()
 
 
 func _on_level_selection_button_pressed():
