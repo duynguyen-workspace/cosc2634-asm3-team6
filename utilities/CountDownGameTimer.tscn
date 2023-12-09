@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://43i5cyh2iamk"]
+
+[ext_resource type="Script" path="res://utilities/CountDownGameTimer.gd" id="1_gm56w"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CountDownGameTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+script = ExtResource("1_gm56w")
+
+[connection signal="timeout" from="CountDownGameTimer" to="CountDownGameTimer" method="_on_timeout"]

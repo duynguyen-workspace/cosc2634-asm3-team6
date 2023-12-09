@@ -1,7 +1,8 @@
-[gd_scene load_steps=76 format=3 uid="uid://cqj5rortidfyt"]
+[gd_scene load_steps=77 format=3 uid="uid://cqj5rortidfyt"]
 
 [ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
+[ext_resource type="Script" path="res://models/level_base/levels/level_1.gd" id="2_pj8oo"]
 [ext_resource type="Texture2D" uid="uid://ccovpiwcd3rwm" path="res://assets/tiles/tilemap.png" id="2_ywltu"]
 [ext_resource type="Texture2D" uid="uid://d0l7kxiia5cdy" path="res://assets/tiles/TX Tileset Grass.png" id="4_iw34s"]
 [ext_resource type="Texture2D" uid="uid://cexi467574b1f" path="res://assets/tiles/tilemap1.png" id="5_ta0uq"]
@@ -30214,6 +30215,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), Packe
 outlines = Array[PackedVector2Array]([PackedVector2Array(81, 641, 82, 226, 129, 223, 130, 114, 211, 113, 242, 80, 242, 146, 322, 148, 319, 81, 402, 80, 401, 63, 671, 68, 670, 237, 923, 229, 927, 128, 958, 126, 958, 636, 894, 636, 872, 705, 133, 702, 131, 643), PackedVector2Array(168, 584, 166, 503, 333, 501, 335, 558, 366, 560, 372, 584, 400, 593, 402, 628, 343, 632, 344, 667, 164, 670), PackedVector2Array(799, 262, 800, 367, 859, 365, 857, 262, 806, 262), PackedVector2Array(659, 441, 656, 396, 270, 396, 270, 440)])
 
 [node name="Level1" instance=ExtResource("1_rk50s")]
+script = ExtResource("2_pj8oo")
 
 [node name="TileMap" parent="." index="0"]
 tile_set = SubResource("TileSet_sd8bh")
@@ -30270,3 +30272,35 @@ position = Vector2(694, 630)
 
 [node name="Waypoint4" parent="EnemyPaths/BossPath" index="3" instance=ExtResource("39_okr5h")]
 position = Vector2(563, 619)
+
+[node name="Node2D" type="Node2D" parent="." index="6"]
+
+[node name="Spawn 1" type="Marker2D" parent="Node2D" index="0"]
+position = Vector2(567, 251)
+
+[node name="Spawn 2" type="Marker2D" parent="Node2D" index="1"]
+position = Vector2(804, 431)
+
+[node name="Spawn 3" type="Marker2D" parent="Node2D" index="2"]
+position = Vector2(472, 140)
+
+[node name="Spawn 4" type="Marker2D" parent="Node2D" index="3"]
+position = Vector2(318, 165)
+
+[node name="Spawn 5" type="Marker2D" parent="Node2D" index="4"]
+position = Vector2(217, 256)
+
+[node name="Spawn 6" type="Marker2D" parent="Node2D" index="5"]
+position = Vector2(139, 478)
+
+[node name="Spawn 7" type="Marker2D" parent="Node2D" index="6"]
+position = Vector2(481, 595)
+
+[node name="Spawn 8" type="Marker2D" parent="Node2D" index="7"]
+position = Vector2(765, 545)
+
+[node name="SpawnTrashTimer" type="Timer" parent="Node2D" index="8"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Node2D/SpawnTrashTimer" to="." method="_on_spawn_trash_timer_timeout"]

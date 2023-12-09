@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm1ugpqrc6fyb"]
+
+[ext_resource type="Texture2D" uid="uid://bxl84wckfep8m" path="res://assets/images/pill1.png" id="1_b8smr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc3fe"]
+size = Vector2(35, 32.5)
+
+[node name="Trash" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b8smr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_mc3fe")
