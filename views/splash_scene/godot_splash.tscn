@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://52jrrtavrfya"]
+
+[ext_resource type="Script" path="res://views/splash_scene/splash_scene.gd" id="1_44vhc"]
+[ext_resource type="FontFile" uid="uid://delndfp42mhc2" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_ehcs7"]
+[ext_resource type="Texture2D" uid="uid://edc5jy8uwimf" path="res://views/godot_splash (1).png" id="2_fojox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dc2xp"]
+font = ExtResource("1_ehcs7")
+font_size = 60
+
+[node name="GodotSplash" type="VBoxContainer"]
+offset_right = 311.0
+offset_bottom = 411.0
+size_flags_vertical = 4
+script = ExtResource("1_44vhc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Made with"
+label_settings = SubResource("LabelSettings_dc2xp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_fojox")
+stretch_mode = 3

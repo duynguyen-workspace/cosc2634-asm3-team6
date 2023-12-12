@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdv0rywo8s0cg"]
+
+[ext_resource type="Script" path="res://views/splash_scene/splash_scene.gd" id="1_2oh23"]
+[ext_resource type="FontFile" uid="uid://delndfp42mhc2" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_jabmf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jjhs2"]
+font = ExtResource("1_jabmf")
+font_size = 80
+font_color = Color(0.52549, 0.792157, 0.14902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jhj6r"]
+font = ExtResource("1_jabmf")
+font_size = 60
+
+[node name="TeamSplash" type="VBoxContainer"]
+offset_right = 278.0
+offset_bottom = 216.0
+script = ExtResource("1_2oh23")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Team 6"
+label_settings = SubResource("LabelSettings_jjhs2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "presents"
+label_settings = SubResource("LabelSettings_jhj6r")
+horizontal_alignment = 1
+vertical_alignment = 1

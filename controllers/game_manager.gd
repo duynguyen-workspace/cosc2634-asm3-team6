@@ -5,7 +5,7 @@ const TOTAL_LEVELS: int = 3
 
 var main_scene: PackedScene = preload("res://views/main/main.tscn")
 var selection_scene: PackedScene = preload("res://views/level_selection_menu/level_selection_menu.tscn")
-var level_scene: PackedScene = load("res://models/level_base/levels/level_%.tscn"% level_number)
+# var level_scene: PackedScene = load("res://models/level_base/levels/level_%.tscn"% level_number)
 
 
 var _level_selected: String
@@ -34,8 +34,8 @@ func load_selection_scene() -> void:
 
 func on_level_selected(ln: int):
 	level_number = ln
-	load_level_scene()
+	# load_level_scene()
 
-func load_level_scene() -> void:
-	get_tree().change_scene_to_packed(level_scene)
+# func load_level_scene() -> void:
+	# get_tree().change_scene_to_packed(level_scene)
 	
