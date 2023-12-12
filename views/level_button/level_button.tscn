@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://7ln3un6gbeci"]
 
-[ext_resource type="Texture2D" uid="uid://fn1dwnc4pglr" path="res://assets/images/levelbutton-removebg-preview (1).png" id="1_fy0a8"]
+[ext_resource type="Texture2D" uid="uid://fn1dwnc4pglr" path="res://assets/images/level_button.png" id="1_alv8y"]
 [ext_resource type="Script" path="res://views/level_button/level_button.gd" id="2_gmq67"]
 [ext_resource type="FontFile" uid="uid://dfsl4cx6pxvd0" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="2_wkt48"]
 
@@ -18,7 +18,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = ExtResource("1_fy0a8")
+texture = ExtResource("1_alv8y")
 script = ExtResource("2_gmq67")
 
 [node name="LevelLabel" type="Label" parent="."]

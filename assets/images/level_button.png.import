@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgmw8xv4a513c"
-path="res://.godot/imported/soldier1_gun.png-e5aea298f6d39a3ee72dacd38246205c.ctex"
+uid="uid://fn1dwnc4pglr"
+path="res://.godot/imported/level_button.png-3060b4286dada2c510fa27d6cfb0cebf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/soldier1_gun.png"
-dest_files=["res://.godot/imported/soldier1_gun.png-e5aea298f6d39a3ee72dacd38246205c.ctex"]
+source_file="res://assets/images/level_button.png"
+dest_files=["res://.godot/imported/level_button.png-3060b4286dada2c510fa27d6cfb0cebf.ctex"]
 
 [params]
 

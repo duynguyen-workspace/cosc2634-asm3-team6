@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://views/splash_scene/splash_scene.gd" id="1_44vhc"]
 [ext_resource type="FontFile" uid="uid://delndfp42mhc2" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_ehcs7"]
-[ext_resource type="Texture2D" uid="uid://edc5jy8uwimf" path="res://views/godot_splash (1).png" id="2_fojox"]
+[ext_resource type="Texture2D" uid="uid://edc5jy8uwimf" path="res://assets/images/godot_splash.png" id="3_0quh0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dc2xp"]
 font = ExtResource("1_ehcs7")
@@ -22,5 +22,5 @@ label_settings = SubResource("LabelSettings_dc2xp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_fojox")
+texture = ExtResource("3_0quh0")
 stretch_mode = 3

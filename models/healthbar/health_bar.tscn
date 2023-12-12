@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://o6byjlurod6p"]
 
 [ext_resource type="Script" path="res://models/healthbar/health_bar.gd" id="1_avhwd"]
-[ext_resource type="Texture2D" uid="uid://d0t2378xb3teq" path="res://assets/images/heart__1_-removebg-preview (1) (1).png" id="2_8ssax"]
+[ext_resource type="Texture2D" uid="uid://d0t2378xb3teq" path="res://assets/images/heart_health_bar.png" id="2_j0n31"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q731s"]
 bg_color = Color(0.384314, 0.384314, 0.384314, 0.556863)
@@ -42,6 +42,6 @@ offset_left = 659.0
 offset_top = -8.0
 offset_right = 709.0
 offset_bottom = 38.0
-texture = ExtResource("2_8ssax")
+texture = ExtResource("2_j0n31")
 
 [connection signal="died" from="." to="." method="_on_died"]
