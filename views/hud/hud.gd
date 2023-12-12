@@ -9,6 +9,8 @@ extends Control
 @onready var level_selection_button = $ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/LevelSelectionButton
 @onready var main_button = $ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/MainButton
 @onready var health_bar = $MC/HB/HealthBar
+@onready var mc_options_menu = $ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu
+@onready var close_options_button = $ColorRect/MC_EndGameMenu/NinePatchRect/CloseOptionsButton
 
 
 
@@ -32,6 +34,12 @@ func show_hud() -> void:
 	color_rect.visible = true
 
 
+func on_game_paused() -> void:
+	show_hud()
+	mc_options_menu.visible = true
+	close_options_button.visible = true
+	get_tree().paused = false
+
 func on_level_completed() -> void:
 	show_hud()
 	mc_level_completed.visible = true
@@ -54,3 +62,14 @@ func _on_level_selection_button_pressed():
 
 func _on_main_button_pressed():
 	GameManager.load_main_scene()
+
+
+func _on_close_options_button_pressed():
+	color_rect.visible = false
+	mc_options_menu.visible = false
+	close_options_button.visible = false
+	
+
+
+func _on_options_button_pressed():
+	on_game_paused()

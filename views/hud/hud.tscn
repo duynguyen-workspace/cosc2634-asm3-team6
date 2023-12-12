@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cd12chr21oh1n"]
+[gd_scene load_steps=19 format=3 uid="uid://cd12chr21oh1n"]
 
 [ext_resource type="FontFile" uid="uid://dfsl4cx6pxvd0" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_qsimt"]
 [ext_resource type="Script" path="res://views/hud/hud.gd" id="1_w5gwf"]
@@ -13,6 +13,7 @@
 [ext_resource type="LabelSettings" uid="uid://fmjiodbr65mw" path="res://assets/fonts/yellow_35.tres" id="10_sclsb"]
 [ext_resource type="Texture2D" uid="uid://elk23x4ahcuf" path="res://assets/images/level_selection_button.png" id="10_ypa61"]
 [ext_resource type="Texture2D" uid="uid://bj31ju25ok2cf" path="res://assets/images/main_home_button.png" id="11_3ctqv"]
+[ext_resource type="Texture2D" uid="uid://rdpndaayut28" path="res://assets/images/close_options_button.png" id="11_rrsu6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3jpe5"]
 font = ExtResource("1_qsimt")
@@ -64,7 +65,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 25
 
-[node name="TextureButton" type="TextureButton" parent="MC/HB"]
+[node name="OptionsButton" type="TextureButton" parent="MC/HB"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -166,6 +167,34 @@ label_settings = SubResource("LabelSettings_8yodh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MC_OptionsMenu" type="MarginContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OptionsLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu/VB"]
+layout_mode = 2
+text = "...PAUSED..."
+label_settings = ExtResource("8_2hyhf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel2" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu/VB"]
+layout_mode = 2
+text = "PRESS (X) TO RETURN TO GAME"
+label_settings = SubResource("LabelSettings_1lekt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MC_LevelCompleted" type="MarginContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect"]
 visible = false
 layout_mode = 1
@@ -203,6 +232,21 @@ label_settings = ExtResource("10_sclsb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CloseOptionsButton" type="TextureButton" parent="ColorRect/MC_EndGameMenu/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.5
+offset_top = 45.0
+offset_right = -43.5
+offset_bottom = 98.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("11_rrsu6")
+
 [node name="VB_Buttons" type="VBoxContainer" parent="ColorRect/MC_EndGameMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -226,6 +270,8 @@ texture_normal = ExtResource("10_ypa61")
 layout_mode = 2
 texture_normal = ExtResource("11_3ctqv")
 
+[connection signal="pressed" from="MC/HB/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/NinePatchRect/CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
 [connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/TryAgainButton" to="." method="_on_try_again_button_pressed"]
 [connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
 [connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/MainButton" to="." method="_on_main_button_pressed"]
