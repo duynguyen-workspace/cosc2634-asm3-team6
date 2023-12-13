@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://d20hh54cy5qs0"]
-
-[node name="LevelButton1"]
-
-[node name="LevelLabel" parent="." index="0"]
-text = "1"
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
