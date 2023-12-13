@@ -1,4 +1,42 @@
-[gd_scene format=3 uid="uid://cd12chr21oh1n"]
+[gd_scene load_steps=19 format=3 uid="uid://cd12chr21oh1n"]
+
+[ext_resource type="FontFile" uid="uid://dfsl4cx6pxvd0" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_qsimt"]
+[ext_resource type="Script" path="res://views/hud/hud.gd" id="1_w5gwf"]
+[ext_resource type="Texture2D" uid="uid://cx6385tkjebh0" path="res://assets/images/options_level.png" id="2_2qh27"]
+[ext_resource type="Texture2D" uid="uid://beck0hh5tfoic" path="res://assets/images/options_level_hover.png" id="3_gyrgp"]
+[ext_resource type="Texture2D" uid="uid://bun7niumrmgir" path="res://assets/images/options_level_pressed.png" id="3_h8jpj"]
+[ext_resource type="FontFile" uid="uid://dp47f104lvviw" path="res://assets/fonts/Bestoom Bold.ttf" id="4_mjeg0"]
+[ext_resource type="PackedScene" uid="uid://o6byjlurod6p" path="res://models/healthbar/health_bar.tscn" id="5_c5rj8"]
+[ext_resource type="Texture2D" uid="uid://dr376q1gdh4t3" path="res://assets/images/wood_panel.png" id="7_ai1du"]
+[ext_resource type="LabelSettings" uid="uid://c05qpwebwypgf" path="res://assets/fonts/end_menu_80.tres" id="8_2hyhf"]
+[ext_resource type="Texture2D" uid="uid://dclg7ms31f7co" path="res://assets/images/try_again_button.png" id="9_5l51e"]
+[ext_resource type="LabelSettings" uid="uid://fmjiodbr65mw" path="res://assets/fonts/yellow_35.tres" id="10_sclsb"]
+[ext_resource type="Texture2D" uid="uid://elk23x4ahcuf" path="res://assets/images/level_selection_button.png" id="10_ypa61"]
+[ext_resource type="Texture2D" uid="uid://bj31ju25ok2cf" path="res://assets/images/main_home_button.png" id="11_3ctqv"]
+[ext_resource type="Texture2D" uid="uid://rdpndaayut28" path="res://assets/images/close_options_button.png" id="11_rrsu6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3jpe5"]
+font = ExtResource("1_qsimt")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_fstfp"]
+font = ExtResource("1_qsimt")
+font_size = 30
+font_color = Color(0.301961, 0.909804, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lekt"]
+font = ExtResource("4_mjeg0")
+font_size = 30
+font_color = Color(1, 1, 0.635294, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yodh"]
+font = ExtResource("4_mjeg0")
+font_size = 40
+font_color = Color(0.121569, 1, 0.415686, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -7,15 +45,233 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w5gwf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="HB" type="HBoxContainer" parent="MC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 25
+
+[node name="OptionsButton" type="TextureButton" parent="MC/HB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource("2_2qh27")
+texture_pressed = ExtResource("3_h8jpj")
+texture_hover = ExtResource("3_gyrgp")
+
+[node name="HealthBar" parent="MC/HB" instance=ExtResource("5_c5rj8")]
+custom_minimum_size = Vector2(695, 18)
+layout_mode = 2
+value = 60.0
+
+[node name="VB" type="VBoxContainer" parent="MC/HB"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ScoreLabel" type="Label" parent="MC/HB/VB"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Score: 00000"
+label_settings = SubResource("LabelSettings_3jpe5")
+horizontal_alignment = 2
+
+[node name="TimerLabel" type="Label" parent="MC/HB/VB"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_fstfp")
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.301961, 0.192157, 0.207843)
+
+[node name="MC_EndGameMenu" type="MarginContainer" parent="ColorRect"]
+custom_minimum_size = Vector2(583, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -291.5
+offset_top = -214.0
+offset_right = 291.5
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ColorRect/MC_EndGameMenu"]
+custom_minimum_size = Vector2(583, 428)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_ai1du")
+
+[node name="MC_GameOver" type="MarginContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="GameOverLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver/VB"]
+layout_mode = 2
+text = "Game Over"
+label_settings = ExtResource("8_2hyhf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel2" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver/VB"]
+layout_mode = 2
+text = "better luck next time..."
+label_settings = SubResource("LabelSettings_1lekt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver/VB"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+[node name="FinalScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_GameOver/VB"]
 layout_mode = 2
-text = "Hello GoDot"
+text = "Your Score: 00000"
+label_settings = SubResource("LabelSettings_8yodh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC_OptionsMenu" type="MarginContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OptionsLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu/VB"]
+layout_mode = 2
+text = "...PAUSED..."
+label_settings = ExtResource("8_2hyhf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel2" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu/VB"]
+layout_mode = 2
+text = "PRESS (X) TO RETURN TO GAME"
+label_settings = SubResource("LabelSettings_1lekt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC_LevelCompleted" type="MarginContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = -40
+
+[node name="VB" type="VBoxContainer" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LevelCompletedLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted/VB"]
+layout_mode = 2
+text = "Level
+Completed!!"
+label_settings = ExtResource("8_2hyhf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted/VB"]
+layout_mode = 2
+text = "Your Score: 00000"
+label_settings = SubResource("LabelSettings_8yodh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="ColorRect/MC_EndGameMenu/NinePatchRect/MC_LevelCompleted/VB"]
+layout_mode = 2
+text = "High Score: 00000"
+label_settings = ExtResource("10_sclsb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseOptionsButton" type="TextureButton" parent="ColorRect/MC_EndGameMenu/NinePatchRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.5
+offset_top = 45.0
+offset_right = -43.5
+offset_bottom = 98.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("11_rrsu6")
+
+[node name="VB_Buttons" type="VBoxContainer" parent="ColorRect/MC_EndGameMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="HB_Buttons" type="HBoxContainer" parent="ColorRect/MC_EndGameMenu/VB_Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="TryAgainButton" type="TextureButton" parent="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("9_5l51e")
+
+[node name="LevelSelectionButton" type="TextureButton" parent="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("10_ypa61")
+
+[node name="MainButton" type="TextureButton" parent="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("11_3ctqv")
+
+[connection signal="pressed" from="MC/HB/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/NinePatchRect/CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/TryAgainButton" to="." method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/LevelSelectionButton" to="." method="_on_level_selection_button_pressed"]
+[connection signal="pressed" from="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/MainButton" to="." method="_on_main_button_pressed"]

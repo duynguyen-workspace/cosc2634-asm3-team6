@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://s00lt0dnvsnj"]
+
+[ext_resource type="Texture2D" uid="uid://toineak2105w" path="res://assets/images/main_background.png" id="1_2xmfx"]
+[ext_resource type="Script" path="res://views/level_selection_menu/level_selection_menu.gd" id="1_xp7ag"]
+[ext_resource type="FontFile" uid="uid://dp47f104lvviw" path="res://assets/fonts/Bestoom Bold.ttf" id="2_h3bpq"]
+[ext_resource type="Texture2D" uid="uid://bj31ju25ok2cf" path="res://assets/images/main_home_button.png" id="3_ptqnq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fwkjo"]
+font = ExtResource("2_h3bpq")
+font_size = 80
+font_color = Color(0.956863, 1, 0.678431, 1)
+outline_size = 16
+outline_color = Color(0.960784, 0.254902, 0.203922, 1)
+
+[node name="LevelSelectionMenu" type="Node"]
+script = ExtResource("1_xp7ag")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2xmfx")
+
+[node name="MC" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="VB" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "CHOOSE YOUR LEVEL"
+label_settings = SubResource("LabelSettings_fwkjo")
+
+[node name="GridContainer" type="GridContainer" parent="MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/h_separation = 20
+columns = 3
+
+[node name="MainButton" type="TextureButton" parent="MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("3_ptqnq")
+
+[connection signal="pressed" from="MC/VB/MainButton" to="." method="_on_main_button_pressed"]

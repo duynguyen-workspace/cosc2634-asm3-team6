@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p6cad51i7g5t"
-path="res://.godot/imported/pill2.png-fba3083efa5cf672aaebae8561ff0aba.ctex"
+uid="uid://fn1dwnc4pglr"
+path="res://.godot/imported/level_button.png-3060b4286dada2c510fa27d6cfb0cebf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/pill2.png"
-dest_files=["res://.godot/imported/pill2.png-fba3083efa5cf672aaebae8561ff0aba.ctex"]
+source_file="res://assets/images/level_button.png"
+dest_files=["res://.godot/imported/level_button.png-3060b4286dada2c510fa27d6cfb0cebf.ctex"]
 
 [params]
 

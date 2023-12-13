@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbribu2afires"]
+
+[ext_resource type="Script" path="res://views/splash_scene/splash_manager.gd" id="1_7aowd"]
+[ext_resource type="PackedScene" uid="uid://bdv0rywo8s0cg" path="res://views/splash_scene/team_splash.tscn" id="2_3iked"]
+[ext_resource type="PackedScene" uid="uid://cbr1dcfht1jfq" path="res://views/main/main.tscn" id="2_dgfq8"]
+[ext_resource type="PackedScene" uid="uid://52jrrtavrfya" path="res://views/splash_scene/godot_splash.tscn" id="3_1riuc"]
+
+[node name="SplashManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7aowd")
+_move_to = ExtResource("2_dgfq8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SplashContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GodotSplash" parent="SplashContainer" instance=ExtResource("3_1riuc")]
+layout_mode = 2
+
+[node name="TeamSplash" parent="SplashContainer" instance=ExtResource("2_3iked")]
+layout_mode = 2
