@@ -27,10 +27,10 @@ shadow_color = Color(0.784314, 0.219608, 0.266667, 1)
 font = ExtResource("1_qsimt")
 font_size = 32
 font_color = Color(0.301961, 0.909804, 0, 1)
-outline_size = 8
+outline_size = 6
 outline_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
 shadow_size = 11
-shadow_color = Color(0.941176, 0.941176, 0.941176, 0.913725)
+shadow_color = Color(0.0235294, 0.0235294, 0.0235294, 0.301961)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1lekt"]
 font = ExtResource("4_mjeg0")
@@ -82,7 +82,7 @@ texture_hover = ExtResource("3_gyrgp")
 [node name="HealthBar" parent="MC/HB" instance=ExtResource("5_c5rj8")]
 custom_minimum_size = Vector2(695, 22)
 layout_mode = 2
-value = 60.0
+value = 40.0
 
 [node name="VB" type="VBoxContainer" parent="MC/HB"]
 layout_mode = 2
