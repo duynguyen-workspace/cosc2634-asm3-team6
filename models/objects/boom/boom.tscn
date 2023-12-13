@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpuwo3li1mbqo"]
+
+[ext_resource type="Texture2D" uid="uid://ejtlnmfkesjw" path="res://assets/spritesheets/EXPLOSION_ANIMATION.png" id="1_ad1jd"]
+[ext_resource type="AudioStream" uid="uid://caqvq1etax8ps" path="res://assets/sounds/sfx_exp_medium4.wav" id="2_3qfrr"]
+[ext_resource type="Script" path="res://models/objects/boom/boom.gd" id="2_5dcoo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x23gd"]
+atlas = ExtResource("1_ad1jd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgdmk"]
+atlas = ExtResource("1_ad1jd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu33j"]
+atlas = ExtResource("1_ad1jd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kld2y"]
+atlas = ExtResource("1_ad1jd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87ji5"]
+atlas = ExtResource("1_ad1jd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1msr5"]
+atlas = ExtResource("1_ad1jd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfg2o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x23gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgdmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu33j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kld2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87ji5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1msr5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Boom" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_lfg2o")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("2_5dcoo")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3qfrr")
+autoplay = true
+
+[connection signal="finished" from="Sound" to="." method="_on_sound_finished"]

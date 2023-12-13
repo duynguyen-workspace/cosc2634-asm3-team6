@@ -1,4 +1,5 @@
 extends Node
 
-signal on_level_completed
-signal on_game_over
+signal on_debug(text: String)
+signal on_level_complete(bool)
+signal on_game_over(bool)

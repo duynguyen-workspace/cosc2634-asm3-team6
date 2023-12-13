@@ -1,5 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dwgu4wn2trwgu"]
 
+
 [ext_resource type="FontFile" uid="uid://dp47f104lvviw" path="res://assets/fonts/Bestoom Bold.ttf" id="1_bk7s4"]
 
 [resource]
