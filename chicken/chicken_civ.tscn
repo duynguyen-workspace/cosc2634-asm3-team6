@@ -113,7 +113,6 @@ animations = [{
 
 [node name="ChickenCiv" instance=ExtResource("1_w066k")]
 script = ExtResource("2_6io5w")
-path_points = NodePath("")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_kd5i6")
