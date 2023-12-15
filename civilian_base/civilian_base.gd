@@ -5,6 +5,7 @@ class_name CivBase
 var _speed = 100.0
 
 @export var path_points: NodePath
+var civ_scene = load("res://chicken/chicken_civ.tscn")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var civ_spawn_timer = $CivSpawnTimer
@@ -20,7 +21,7 @@ var _current_wp: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	create_wp()
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -30,7 +31,7 @@ func _physics_process(delta):
 
 func spawn_civilian() -> void:
 	print("Instantiating civ")
-	var civ_scene = load("res://chicken/chicken_civ.tscn")
+	
 	if civ_scene != null:
 		var civ = civ_scene.instantiate()
 		if civ != null:
@@ -74,3 +75,5 @@ func update_movement() -> void:
 func _on_nav_agent_velocity_computed(safe_velocity):
 	velocity = safe_velocity
 	move_and_slide()
+
+# 
