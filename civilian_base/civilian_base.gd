@@ -44,15 +44,14 @@ func spawn_civilian() -> void:
 	print("Civilian Scene:", civ_scene)
 
 
-func _on_civ_spawn_timer_timeout():
-	spawn_civilian()
-
 func create_wp() -> void:
+	
 	for c in get_node(path_points).get_children():
 		_waypoints.append(c.global_position)
 	
 	
 func update_navigation() -> void:
+	await get_tree().physics_frame
 	var npp = nav_agent.get_next_path_position()
 	var ini_v = (npp - global_position).normalized() * _speed
 	nav_agent.set_velocity(ini_v)
@@ -76,4 +75,5 @@ func _on_nav_agent_velocity_computed(safe_velocity):
 	velocity = safe_velocity
 	move_and_slide()
 
-# 
+func _on_civ_spawn_timer_timeout():
+	spawn_civilian()
