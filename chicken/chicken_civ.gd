@@ -21,13 +21,12 @@ var civ_scene = load("res://chicken/chicken_civ.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	create_wp()
+	pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	update_movement()
-	update_navigation()
+	pass
 
 func _on_civ_spawn_timer_timeout():
 	spawn_civilian()

@@ -5,6 +5,8 @@ class_name CivBase
 var _speed = 100.0
 
 @export var path_points: NodePath
+@onready var path = get_node(path_points)
+
 var civ_scene = load("res://chicken/chicken_civ.tscn")
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
