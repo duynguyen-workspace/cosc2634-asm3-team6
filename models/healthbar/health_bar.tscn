@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=3 uid="uid://o6byjlurod6p"]
 
 [ext_resource type="Script" path="res://models/healthbar/health_bar.gd" id="1_avhwd"]
-[ext_resource type="Texture2D" uid="uid://d0t2378xb3teq" path="res://assets/images/heart_health_bar.png" id="2_j0n31"]
+[ext_resource type="Texture2D" uid="uid://d0t2378xb3teq" path="res://assets/images/heart__1_-removebg-preview (1) (1).png" id="2_j0n31"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q731s"]
-bg_color = Color(0.384314, 0.384314, 0.384314, 0.556863)
+bg_color = Color(0.384314, 0.384314, 0.384314, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(1, 1, 1, 0.74902)
+border_color = Color(0, 0, 0, 0.933333)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -29,7 +29,7 @@ corner_radius_bottom_left = 4
 
 [node name="HealthBar" type="ProgressBar"]
 offset_right = 687.0
-offset_bottom = 28.0
+offset_bottom = 35.0
 theme_override_styles/background = SubResource("StyleBoxFlat_q731s")
 theme_override_styles/fill = SubResource("StyleBoxFlat_pbtw8")
 value = 100.0
