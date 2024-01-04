@@ -17,12 +17,20 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_3jpe5"]
 font = ExtResource("1_qsimt")
-font_size = 30
+font_size = 32
+outline_size = 6
+outline_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+shadow_size = 11
+shadow_color = Color(0.784314, 0.219608, 0.266667, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fstfp"]
 font = ExtResource("1_qsimt")
-font_size = 30
+font_size = 32
 font_color = Color(0.301961, 0.909804, 0, 1)
+outline_size = 6
+outline_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
+shadow_size = 11
+shadow_color = Color(0.0235294, 0.0235294, 0.0235294, 0.301961)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1lekt"]
 font = ExtResource("4_mjeg0")
@@ -54,9 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 20
 
 [node name="HB" type="HBoxContainer" parent="MC"]
@@ -74,9 +80,9 @@ texture_pressed = ExtResource("3_h8jpj")
 texture_hover = ExtResource("3_gyrgp")
 
 [node name="HealthBar" parent="MC/HB" instance=ExtResource("5_c5rj8")]
-custom_minimum_size = Vector2(695, 18)
+custom_minimum_size = Vector2(695, 22)
 layout_mode = 2
-value = 60.0
+value = 40.0
 
 [node name="VB" type="VBoxContainer" parent="MC/HB"]
 layout_mode = 2
