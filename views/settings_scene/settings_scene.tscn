@@ -1,0 +1,154 @@
+[gd_scene load_steps=14 format=3 uid="uid://crngv1h0vo0ae"]
+
+[ext_resource type="Texture2D" uid="uid://toineak2105w" path="res://assets/images/main_background.png" id="1_40alw"]
+[ext_resource type="Script" path="res://views/settings_scene/settings_scene.gd" id="1_pmb31"]
+[ext_resource type="FontFile" uid="uid://dp47f104lvviw" path="res://assets/fonts/Bestoom Bold.ttf" id="2_w36lb"]
+[ext_resource type="Texture2D" uid="uid://dr376q1gdh4t3" path="res://assets/images/wood_panel.png" id="3_0oeh1"]
+[ext_resource type="Texture2D" uid="uid://bfgqh27ok316o" path="res://assets/images/wood_button_normal.png" id="3_7nkor"]
+[ext_resource type="Texture2D" uid="uid://bj31ju25ok2cf" path="res://assets/images/main_home_button.png" id="3_spqkw"]
+[ext_resource type="Texture2D" uid="uid://uh1fpopiv7tj" path="res://assets/images/wood_button_pressed.png" id="4_utbgy"]
+[ext_resource type="Texture2D" uid="uid://bo7oh0k6imlwp" path="res://assets/images/wood_button_hover.png" id="5_73yja"]
+[ext_resource type="LabelSettings" uid="uid://bjhjo5pw18gi" path="res://assets/fonts/button_label_35.tres" id="6_1hcl8"]
+[ext_resource type="Texture2D" uid="uid://dnt6kowkxx3wa" path="res://assets/images/sound_button.png" id="7_ygwlu"]
+[ext_resource type="Texture2D" uid="uid://cqwj6r7bmdl57" path="res://assets/images/mute_button.png" id="9_uthmh"]
+[ext_resource type="Script" path="res://views/settings_scene/mute_volume_button.gd" id="10_djkt6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wb3sm"]
+font = ExtResource("2_w36lb")
+font_size = 90
+font_color = Color(0.956863, 1, 0.678431, 1)
+outline_size = 16
+outline_color = Color(0.960784, 0.254902, 0.203922, 1)
+
+[node name="SettingsScene" type="Node"]
+script = ExtResource("1_pmb31")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_40alw")
+
+[node name="MC" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MC"]
+custom_minimum_size = Vector2(583, 630)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_0oeh1")
+
+[node name="MC" type="MarginContainer" parent="TextureRect/MC/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="TextureRect/MC/TextureRect/MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_wb3sm")
+
+[node name="Control" type="Control" parent="TextureRect/MC/TextureRect/MC/VB"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="MC2" type="MarginContainer" parent="TextureRect/MC/TextureRect/MC/VB"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="HB" type="HBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/MC2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 70
+
+[node name="VB2" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/MC2/HB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="InstructionsButton" type="TextureButton" parent="TextureRect/MC/TextureRect/MC/VB/MC2/HB/VB2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_7nkor")
+texture_pressed = ExtResource("4_utbgy")
+texture_hover = ExtResource("5_73yja")
+
+[node name="Label" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/MC2/HB/VB2/InstructionsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Instructrions"
+label_settings = ExtResource("6_1hcl8")
+
+[node name="CreditsButton" type="TextureButton" parent="TextureRect/MC/TextureRect/MC/VB/MC2/HB/VB2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("3_7nkor")
+texture_pressed = ExtResource("4_utbgy")
+texture_hover = ExtResource("5_73yja")
+
+[node name="Label" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/MC2/HB/VB2/CreditsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = ExtResource("6_1hcl8")
+
+[node name="MuteVolumeButton" type="TextureButton" parent="TextureRect/MC/TextureRect/MC/VB/MC2/HB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("7_ygwlu")
+texture_pressed = ExtResource("9_uthmh")
+script = ExtResource("10_djkt6")
+
+[node name="MainButton" type="TextureButton" parent="TextureRect/MC/TextureRect/MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("3_spqkw")
+
+[connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MC2/HB/MuteVolumeButton" to="TextureRect/MC/TextureRect/MC/VB/MC2/HB/MuteVolumeButton" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MainButton" to="." method="_on_main_button_pressed"]

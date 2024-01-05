@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,16 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("testing") == true:
+		GameManager.load_level_scene("1")
 
 
-func _on_play_button_pressed():
-	GameManager.load_selection_scene()
-	
-
-func _on_exit_button_pressed():
-	get_tree().quit()
 
 
-func _on_settings_button_pressed():
-	GameManager.load_settings_scene()
+func _on_main_button_pressed():
+	GameManager.load_main_scene()

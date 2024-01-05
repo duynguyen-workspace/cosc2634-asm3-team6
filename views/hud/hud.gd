@@ -11,6 +11,7 @@ extends Control
 @onready var health_bar = $MC/HB/HealthBar
 @onready var mc_options_menu = $ColorRect/MC_EndGameMenu/NinePatchRect/MC_OptionsMenu
 @onready var close_options_button = $ColorRect/MC_EndGameMenu/NinePatchRect/CloseOptionsButton
+@onready var mute_volume_button = $ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons/MuteVolumeButton
 
 
 
@@ -38,6 +39,7 @@ func on_game_paused() -> void:
 	show_hud()
 	mc_options_menu.visible = true
 	close_options_button.visible = true
+	mute_volume_button.visible = true
 	get_tree().paused = false
 
 func on_level_completed() -> void:
@@ -68,8 +70,8 @@ func _on_close_options_button_pressed():
 	color_rect.visible = false
 	mc_options_menu.visible = false
 	close_options_button.visible = false
+	mute_volume_button.visible = false
 	
-
 
 func _on_options_button_pressed():
 	on_game_paused()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cd12chr21oh1n"]
+[gd_scene load_steps=20 format=3 uid="uid://cd12chr21oh1n"]
 
 [ext_resource type="FontFile" uid="uid://dfsl4cx6pxvd0" path="res://assets/fonts/gemunu-libre-v8-latin-700.ttf" id="1_qsimt"]
 [ext_resource type="Script" path="res://views/hud/hud.gd" id="1_w5gwf"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://elk23x4ahcuf" path="res://assets/images/level_selection_button.png" id="10_ypa61"]
 [ext_resource type="Texture2D" uid="uid://bj31ju25ok2cf" path="res://assets/images/main_home_button.png" id="11_3ctqv"]
 [ext_resource type="Texture2D" uid="uid://rdpndaayut28" path="res://assets/images/close_options_button.png" id="11_rrsu6"]
+[ext_resource type="PackedScene" uid="uid://bsmj4muwvcspb" path="res://views/mute_volume_button/mute_volume_button.tscn" id="12_pe1tq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3jpe5"]
 font = ExtResource("1_qsimt")
@@ -263,6 +264,10 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
+
+[node name="MuteVolumeButton" parent="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons" instance=ExtResource("12_pe1tq")]
+visible = false
+layout_mode = 2
 
 [node name="TryAgainButton" type="TextureButton" parent="ColorRect/MC_EndGameMenu/VB_Buttons/HB_Buttons"]
 layout_mode = 2
