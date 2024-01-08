@@ -13,9 +13,10 @@ const COLOR_DANGER: Color = Color("#cc0000")
 const COLOR_MIDDLE: Color = Color("#ff9900")
 const COLOR_GOOD: Color = Color("#33cc33")
 
+
 var health = StyleBoxFlat.new()
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	max_value = start_health
 	value = start_health
@@ -32,7 +33,7 @@ func _ready():
 	set_color()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	if Input.is_action_just_pressed("hit") == true:
 		take_damage(10)

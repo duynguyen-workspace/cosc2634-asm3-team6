@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqj5rortidfyt"]
+[gd_scene load_steps=7 format=3 uid="uid://5qsk6hd2tan2"]
 
-[ext_resource type="PackedScene" uid="uid://bmuldgmn0akoe" path="res://models/level_ui/level_ui.tscn" id="1_rk50s"]
+[ext_resource type="PackedScene" uid="uid://bmuldgmn0akoe" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="37_h3dhy"]
 [ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="38_mhpo2"]
