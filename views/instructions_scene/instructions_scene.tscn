@@ -61,6 +61,16 @@ size_flags_horizontal = 4
 text = "INSTRUCTIONS"
 label_settings = SubResource("LabelSettings_d816j")
 
+[node name="Text" type="Label" parent="TextureRect/MC/TextureRect/MC/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "- A: Left
+- D: Right
+- W: Up
+- S: Down
+- Space: Dash"
+
 [node name="ReturnButton" type="TextureButton" parent="TextureRect/MC/TextureRect/MC"]
 layout_mode = 2
 size_flags_horizontal = 4
