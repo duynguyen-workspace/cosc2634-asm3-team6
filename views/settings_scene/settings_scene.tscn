@@ -11,7 +11,7 @@
 [ext_resource type="LabelSettings" uid="uid://bjhjo5pw18gi" path="res://assets/fonts/button_label_35.tres" id="6_1hcl8"]
 [ext_resource type="Texture2D" uid="uid://dnt6kowkxx3wa" path="res://assets/images/sound_button.png" id="7_ygwlu"]
 [ext_resource type="Texture2D" uid="uid://cqwj6r7bmdl57" path="res://assets/images/mute_button.png" id="9_uthmh"]
-[ext_resource type="Script" path="res://views/settings_scene/mute_volume_button.gd" id="10_djkt6"]
+[ext_resource type="Script" path="res://views/mute_volume_button/mute_volume_button.gd" id="11_h2lnq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wb3sm"]
 font = ExtResource("2_w36lb")
@@ -142,7 +142,7 @@ size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("7_ygwlu")
 texture_pressed = ExtResource("9_uthmh")
-script = ExtResource("10_djkt6")
+script = ExtResource("11_h2lnq")
 
 [node name="MainButton" type="TextureButton" parent="TextureRect/MC/TextureRect/MC/VB"]
 layout_mode = 2
@@ -150,5 +150,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 texture_normal = ExtResource("3_spqkw")
 
+[connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MC2/HB/VB2/InstructionsButton" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MC2/HB/MuteVolumeButton" to="TextureRect/MC/TextureRect/MC/VB/MC2/HB/MuteVolumeButton" method="_on_pressed"]
 [connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MainButton" to="." method="_on_main_button_pressed"]

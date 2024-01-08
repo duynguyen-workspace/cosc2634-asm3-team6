@@ -8,15 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("testing") == true:
-		GameManager.load_level_scene("1")
+	pass
 
 
-
-
-func _on_main_button_pressed():
-	GameManager.load_main_scene()
-
-
-func _on_instructions_button_pressed():
-	GameManager.
+func _on_return_button_pressed():
+	GameManager.load_settings_scene()
