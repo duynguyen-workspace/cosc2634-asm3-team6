@@ -20,9 +20,6 @@ func _ready():
 func _process(delta):
 		#input
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
-	
-
-		
 	velocity = direction * 250 
 	# Called dash function
 
@@ -37,8 +34,6 @@ func _process(delta):
 	# Check user state
 	calculate_states()
 
-
-		
 
 func calculate_states() -> void:
 	print(velocity.y)
@@ -73,7 +68,7 @@ func set_state(new_state: PLAYER_STATE) -> void:
 			
 			
 func startDash(direction):
-	velocity = direction * 600
+	velocity = direction * 400
 	dash = false
 	
 
