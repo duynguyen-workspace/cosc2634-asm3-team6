@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://tnrgo7spe5qf"]
 
 [ext_resource type="Texture2D" uid="uid://cce0ieydh61i0" path="res://assets/tiles/Terrain (16x16).png" id="1_h3gti"]
-[ext_resource type="PackedScene" uid="uid://dfgtlo7qi3pad" path="res://civilian_base/civilian_base.tscn" id="2_sl4vp"]
+[ext_resource type="PackedScene" uid="uid://hen75vkk0pcy" path="res://chicken/ex_chicken.tscn" id="2_pfiqr"]
 [ext_resource type="PackedScene" uid="uid://bbta4wxojlksj" path="res://waypoint.tscn" id="3_2x40y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k832q"]
@@ -174,7 +174,8 @@ layer_0/tile_data = PackedInt32Array(65551, 458752, 1, 131087, 458752, 1, 196623
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="civilian_base" parent="." instance=ExtResource("2_sl4vp")]
+[node name="ExChicken" parent="." instance=ExtResource("2_pfiqr")]
+position = Vector2(-16, 14)
 path_points = NodePath("../MovePaths/Path1")
 
 [node name="MoveArea" type="Area2D" parent="."]

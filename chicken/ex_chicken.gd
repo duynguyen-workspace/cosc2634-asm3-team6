@@ -6,7 +6,7 @@ var _speed: float = 800.0
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
-
+@onready var civ_holder = $CivHolder
 @onready var nav_agent = $NavAgent
 
 enum FACING_X { LEFT = -1, RIGHT = 1 }
@@ -15,44 +15,31 @@ enum FACING_X { LEFT = -1, RIGHT = 1 }
 var can_spawn: bool = true
 var _waypoints: Array = []
 var _current_wp: int = 0
-var starting: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	starting = true
-	await get_tree().process_frame
+	# await get_tree().process_frame
 	create_wp()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if starting == false:
-		process_moving()
+		update_movement()
 		update_navigation()
-	move_and_slide()
+	
 
 func spawn_civilian() -> void:
 	print("Instantiating civ")
-	var civ_scene = load("res://chicken/chicken_civ.tscn")
-	if civ_scene != null:
-		var civ = civ_scene.instantiate()
-		if civ != null:
-			print("Adding child nodes")
-			civ_holder.add_child(civ)
-		else:
-			print("Failed to instantiate civ node.")
-	else:
-		print("Failed to load chicken_scene.")
-	print("Civilian Scene:", civ_scene)
+	pass
 
 
 func _on_civ_spawn_timer_timeout():
-	spawn_civilian()
+	pass
 
 func create_wp() -> void:
 	for c in get_node(path_points).get_children():
 		_waypoints.append(c.global_position)
-	starting = false
+	
 	
 
 func update_navigation() -> void:
@@ -78,5 +65,6 @@ func update_movement() -> void:
 func _on_nav_agent_velocity_computed(safe_velocity):
 	velocity = safe_velocity
 	move_and_slide()
+
 
 
