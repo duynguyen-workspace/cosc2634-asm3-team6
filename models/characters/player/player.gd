@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):
 		#input
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = direction * 250 
+	velocity = direction * 200 
 	# Called dash function
 
 	if Input.is_action_just_pressed("Dash") and dash:
@@ -68,7 +68,7 @@ func set_state(new_state: PLAYER_STATE) -> void:
 			
 			
 func startDash(direction):
-	velocity = direction * 400
+	velocity = direction * 300
 	dash = false
 	
 
