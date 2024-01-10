@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://cya7og7q23d5p"]
 
-[ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_x5grk"]
+[ext_resource type="PackedScene" uid="uid://bmuldgmn0akoe" path="res://models/level_base/level_base.tscn" id="1_x5grk"]
 [ext_resource type="Texture2D" uid="uid://68alvu0jtomb" path="res://assets/spritesheets/floor.png" id="2_nf7hq"]
 [ext_resource type="Texture2D" uid="uid://cpe7eo8el2xd" path="res://assets/Tile/16x16/Tilesets/Solaria Demo Update 01.png" id="3_v2ldo"]
 [ext_resource type="Texture2D" uid="uid://bfmikeuj7i51q" path="res://assets/Tile/tilemap1.png" id="4_0a74v"]

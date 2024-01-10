@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cjj6m416gm3re"]
+[gd_scene load_steps=30 format=3 uid="uid://cjj6m416gm3re"]
 
 [ext_resource type="Script" path="res://models/characters/player/player.gd" id="1_65km6"]
 [ext_resource type="Texture2D" uid="uid://cpx27s38ky51t" path="res://assets/players/Idle (32x32).png" id="2_bq6x1"]
@@ -181,9 +181,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vh2o"]
 size = Vector2(7.5, 10)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2j8k4"]
+radius = 40.1123
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 4
-collision_mask = 11
+collision_mask = 27
 script = ExtResource("1_65km6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -203,6 +206,13 @@ one_shot = true
 [node name="DashTime" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="TrashDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashDetector"]
+shape = SubResource("CircleShape2D_2j8k4")
 
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="DashTime" to="." method="_on_dash_time_timeout"]

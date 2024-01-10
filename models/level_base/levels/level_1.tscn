@@ -1,6 +1,6 @@
-[gd_scene load_steps=79 format=3 uid="uid://cqj5rortidfyt"]
+[gd_scene load_steps=80 format=3 uid="uid://cqj5rortidfyt"]
 
-[ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
+[ext_resource type="PackedScene" uid="uid://bmuldgmn0akoe" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
 [ext_resource type="Texture2D" uid="uid://ccovpiwcd3rwm" path="res://assets/tiles/tilemap.png" id="2_ywltu"]
 [ext_resource type="Texture2D" uid="uid://d0l7kxiia5cdy" path="res://assets/tiles/TX Tileset Grass.png" id="4_iw34s"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ln8ere4e3ya" path="res://assets/Spritesheet/Trash/Trashbin/blue_trashbin.png" id="40_gxbpy"]
 [ext_resource type="Texture2D" uid="uid://c3ssd5rw07ugj" path="res://assets/Spritesheet/Trash/Trashbin/orangle_trashbin.png" id="41_5yq0f"]
 [ext_resource type="Texture2D" uid="uid://on7tu8omo246" path="res://assets/Spritesheet/Trash/Trashbin/green_trashbin.png" id="42_gml77"]
+[ext_resource type="PackedScene" uid="uid://cx5smh30j7wbr" path="res://models/objects/trash/trash.tscn" id="43_vy802"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yldi"]
 texture = ExtResource("2_ywltu")
@@ -30289,3 +30290,8 @@ texture = ExtResource("41_5yq0f")
 position = Vector2(634, 104)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("42_gml77")
+
+[node name="TrashList" type="Node2D" parent="." index="10"]
+
+[node name="Trash" parent="TrashList" index="0" instance=ExtResource("43_vy802")]
+position = Vector2(281, 174)

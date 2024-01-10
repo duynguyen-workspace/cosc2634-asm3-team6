@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx5smh30j7wbr"]
+
+[ext_resource type="Texture2D" uid="uid://du8a06m2plwuc" path="res://assets/Spritesheet/Trash/trash assets/screen 1.png" id="1_1p0al"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kww5"]
+size = Vector2(19, 19)
+
+[node name="Trash" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1p0al")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_4kww5")
