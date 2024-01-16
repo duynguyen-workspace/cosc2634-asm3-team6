@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf217u3f5a84t"]
+
+[ext_resource type="Texture2D" uid="uid://o60icrps4jqn" path="res://assets/Spritesheet/Trash/trashbin.png" id="1_ob8jf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eq21h"]
+radius = 26.0432
+
+[node name="TrashBin" type="Area2D"]
+collision_layer = 32
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_ob8jf")
+offset = Vector2(3, 10)
+hframes = 3
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_eq21h")
