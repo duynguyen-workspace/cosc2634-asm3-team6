@@ -30,7 +30,7 @@ func _ready():
 	
 func _physics_process(delta):
 	# Update trash position
-	update_trash_state(heldTrash)
+	update_trash_state()
 
 func _process(delta):
 		#input
@@ -81,15 +81,15 @@ func set_state(new_state: PLAYER_STATE) -> void:
 	
 	match _state:
 		PLAYER_STATE.IDLE:
-			animated_sprite_2d.play("Idle")
+			animated_sprite_2d.play("idle")
 		PLAYER_STATE.UP:
-			animated_sprite_2d.play("Up")
+			animated_sprite_2d.play("up")
 		PLAYER_STATE.DOWN:
-			animated_sprite_2d.play("Down")
+			animated_sprite_2d.play("down")
 		PLAYER_STATE.RIGHT:
-			animated_sprite_2d.play("Right")
+			animated_sprite_2d.play("right")
 		PLAYER_STATE.LEFT:
-			animated_sprite_2d.play("Left")
+			animated_sprite_2d.play("left")
 			
 			
 func startDash(direction):
@@ -167,13 +167,10 @@ func sort_trash(trashbin, trash):
 
 func pickup_trash(trash):
 	# Pick up the trash object
-	var new_trash = trash
-	new_trash.position = trash_pos.global_position
-	
-	trash_pos.add_child(new_trash)
+	heldTrash = trash
 	canPick = false
 	
-	trash.queue_free()
+	heldTrash.position = trash_pos.position
 	
 	# Additional logic (e.g., update inventory) can be added here
 	
@@ -187,7 +184,7 @@ func drop_trash():
 	add_child(heldTrash) 
 	heldTrash = null
 
-func update_trash_state(trash: Node2D):
+func update_trash_state():
 	if heldTrash == null:
 		return
 	
@@ -196,7 +193,7 @@ func update_trash_state(trash: Node2D):
 	else:
 		label.text = "PRESS U TO DROP"
 		
-	trash.position = trash_pos.global_position
+	heldTrash.position = trash_pos.position
 
 func _on_trash_detector_body_exited(body):
 	if heldTrash == null:
