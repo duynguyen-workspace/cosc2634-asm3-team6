@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bmuldgmn0akoe" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
+[ext_resource type="Script" path="res://models/level_base/levels/level_1.gd" id="2_pj8oo"]
 [ext_resource type="Texture2D" uid="uid://ccovpiwcd3rwm" path="res://assets/tiles/tilemap.png" id="2_ywltu"]
 [ext_resource type="Texture2D" uid="uid://d0l7kxiia5cdy" path="res://assets/tiles/TX Tileset Grass.png" id="4_iw34s"]
 [ext_resource type="Texture2D" uid="uid://cexi467574b1f" path="res://assets/tiles/tilemap1.png" id="5_ta0uq"]
@@ -39,8 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="37_h3dhy"]
 [ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="38_mhpo2"]
 [ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="39_okr5h"]
-[ext_resource type="PackedScene" uid="uid://c0ms7ut6ulamq" path="res://models/objects/trash/trash.tscn" id="40_jkayv"]
-[ext_resource type="PackedScene" uid="uid://crkwwsbspkoa7" path="res://models/objects/trash/trash_bin_2.tscn" id="41_wv0gg"]
+[ext_resource type="PackedScene" path="res://models/objects/trash/trash_bin_2.tscn" id="41_wv0gg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yldi"]
 texture = ExtResource("2_ywltu")
@@ -30216,6 +30216,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), Packe
 outlines = Array[PackedVector2Array]([PackedVector2Array(81, 641, 82, 226, 129, 223, 130, 114, 211, 113, 242, 80, 242, 146, 322, 148, 319, 81, 402, 80, 401, 63, 671, 68, 670, 237, 923, 229, 927, 128, 958, 126, 958, 636, 894, 636, 872, 705, 133, 702, 131, 643), PackedVector2Array(168, 584, 166, 503, 333, 501, 335, 558, 366, 560, 372, 584, 400, 593, 402, 628, 343, 632, 344, 667, 164, 670), PackedVector2Array(799, 262, 800, 367, 859, 365, 857, 262, 806, 262), PackedVector2Array(659, 441, 656, 396, 270, 396, 270, 440)])
 
 [node name="Level1" instance=ExtResource("1_rk50s")]
+script = ExtResource("2_pj8oo")
 
 [node name="TileMap" parent="." index="0"]
 tile_set = SubResource("TileSet_sd8bh")
@@ -30276,13 +30277,39 @@ position = Vector2(694, 630)
 [node name="Waypoint4" parent="EnemyPaths/BossPath" index="3" instance=ExtResource("39_okr5h")]
 position = Vector2(563, 619)
 
-[node name="Trash" parent="." index="6" instance=ExtResource("40_jkayv")]
-position = Vector2(278, 182)
-
-[node name="Trash2" parent="." index="7" instance=ExtResource("40_jkayv")]
-position = Vector2(205, 406)
-
-[node name="TrashBin2" parent="." index="8" instance=ExtResource("41_wv0gg")]
+[node name="TrashBin2" parent="." index="6" instance=ExtResource("41_wv0gg")]
 position = Vector2(450, 111)
+
+[node name="SpawnPoints" type="Node2D" parent="." index="7"]
+
+[node name="Spawn1" type="Marker2D" parent="SpawnPoints" index="0"]
+position = Vector2(350, 174)
+
+[node name="Spawn2" type="Marker2D" parent="SpawnPoints" index="1"]
+position = Vector2(644, 226)
+
+[node name="Spawn3" type="Marker2D" parent="SpawnPoints" index="2"]
+position = Vector2(765, 312)
+
+[node name="Spawn4" type="Marker2D" parent="SpawnPoints" index="3"]
+position = Vector2(772, 429)
+
+[node name="Spawn5" type="Marker2D" parent="SpawnPoints" index="4"]
+position = Vector2(722, 572)
+
+[node name="Spawn6" type="Marker2D" parent="SpawnPoints" index="5"]
+position = Vector2(514, 565)
+
+[node name="Spawn7" type="Marker2D" parent="SpawnPoints" index="6"]
+position = Vector2(458, 418)
+
+[node name="Spawn8" type="Marker2D" parent="SpawnPoints" index="7"]
+position = Vector2(207, 487)
+
+[node name="SpawnTimer" type="Timer" parent="SpawnPoints" index="8"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="SpawnPoints/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 
 [editable path="Player"]
