@@ -1,14 +1,14 @@
 extends Node2D
 
 @onready var spawnPoints = [
-	$SpawnPoints/Spawn1, 
-	$SpawnPoints/Spawn2, 
-	$SpawnPoints/Spawn3, 
-	$SpawnPoints/Spawn4, 
-	$SpawnPoints/Spawn5, 
-	$SpawnPoints/Spawn6, 
-	$SpawnPoints/Spawn7, 
-	$SpawnPoints/Spawn8
+	$"SpawnPoints/Spawn 1", 
+	$"SpawnPoints/Spawn 2", 
+	$"SpawnPoints/Spawn 3", 
+	$"SpawnPoints/Spawn 4", 
+	$"SpawnPoints/Spawn 5", 
+	$"SpawnPoints/Spawn 6", 
+	$"SpawnPoints/Spawn 7", 
+	$"SpawnPoints/Spawn 8"
 ]
 var availableSpawnPoints = []
 @onready var spawnTrashTimer = $SpawnPoints/SpawnTimer
@@ -19,7 +19,7 @@ func _ready():
 func spawnTrash():
 	var trashScene = preload("res://models/objects/trash/trash.tscn")  # Load your trash scene
 	
-	print(availableSpawnPoints)
+	# print(availableSpawnPoints)
 	if availableSpawnPoints.size() > 0:
 		var randomSpawnPointIndex = randi() % availableSpawnPoints.size()
 		var randomSpawnPoint = availableSpawnPoints[randomSpawnPointIndex]

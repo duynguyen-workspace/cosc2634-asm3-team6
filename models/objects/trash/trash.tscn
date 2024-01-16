@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0ms7ut6ulamq"]
+[gd_scene load_steps=4 format=3 uid="uid://bm1ugpqrc6fyb"]
 
 [ext_resource type="Texture2D" uid="uid://q3gxbhdqqjn2" path="res://assets/trash_assets/box.png" id="1_7awud"]
 [ext_resource type="Script" path="res://models/objects/trash/trash.gd" id="1_unkf0"]

@@ -167,9 +167,13 @@ func sort_trash(trashbin, trash):
 
 func pickup_trash(trash):
 	# Pick up the trash object
-	heldTrash = trash
-	trash_node.add_child(trash)
+	var new_trash = trash
+	new_trash.position = trash_pos.global_position
+	
+	trash_pos.add_child(new_trash)
 	canPick = false
+	
+	trash.queue_free()
 	
 	# Additional logic (e.g., update inventory) can be added here
 	

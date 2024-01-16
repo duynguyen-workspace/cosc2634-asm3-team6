@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=3 uid="uid://cjj6m416gm3re"]
 
 [ext_resource type="Script" path="res://models/characters/player/player.gd" id="1_65km6"]
-[ext_resource type="Texture2D" uid="uid://tmful12bo11d" path="res://assets/players/player-sprite.png" id="2_axif8"]
+[ext_resource type="Texture2D" path="res://assets/players/player-sprite.png" id="2_axif8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5knsa"]
 atlas = ExtResource("2_axif8")
@@ -297,8 +297,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vh2o"]
-size = Vector2(10.25, 12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q58w0"]
+radius = 7.6875
+height = 20.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2j8k4"]
 radius = 36.0
@@ -313,14 +314,15 @@ script = ExtResource("1_65km6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
-scale = Vector2(2, 2)
+scale = Vector2(3.5, 3.5)
 sprite_frames = SubResource("SpriteFrames_vt1di")
 animation = &"idle"
 frame_progress = 0.619373
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.375, -0.5)
 scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_3vh2o")
+shape = SubResource("CapsuleShape2D_q58w0")
 
 [node name="DashCooldown" type="Timer" parent="."]
 wait_time = 4.0
@@ -340,6 +342,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrashDetector"]
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_2j8k4")
 
 [node name="Label" type="Label" parent="."]
