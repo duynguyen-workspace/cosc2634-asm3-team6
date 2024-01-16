@@ -9,7 +9,7 @@ class_name Player
 var canDash = false
 var dash = true
 
-enum PLAYER_STATE { IDLE, RUN, HURT }
+enum PLAYER_STATE { IDLE, UP, DOWN, RIGHT, LEFT, HURT }
 
 var _state: PLAYER_STATE = PLAYER_STATE.IDLE
 
@@ -35,13 +35,7 @@ func _physics_process(delta):
 func _process(delta):
 		#input
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
-	
-	if Input.is_action_pressed("Left"):
-		animated_sprite_2d.flip_h = true
-	else: if Input.is_action_pressed("Right"): 
-		animated_sprite_2d.flip_h = false
-		
-	velocity = direction * 250 
+	velocity = direction * 200 
 	# Called dash function
 
 	if Input.is_action_just_pressed("Dash") and dash:
@@ -50,7 +44,8 @@ func _process(delta):
 
 	if canDash:
 		startDash(direction)
-		
+	
+	# Pickup, drop and sort functions
 	if Input.is_action_just_pressed("pickup") and canPick:
 		pickup_trash(lastTrashObject)
 		
@@ -66,10 +61,17 @@ func _process(delta):
 	calculate_states()
 
 func calculate_states() -> void:
-	if velocity.x == 0:
-		set_state(PLAYER_STATE.IDLE)
+	print(velocity.y)
+	if velocity.x < 0:
+		set_state(PLAYER_STATE.LEFT)
+	elif velocity.x > 0:
+		set_state(PLAYER_STATE.RIGHT)
+	elif velocity.y > 0:
+		set_state(PLAYER_STATE.DOWN)
+	elif velocity.y < 0:
+		set_state(PLAYER_STATE.UP)
 	else:
-		set_state(PLAYER_STATE.RUN)
+		set_state(PLAYER_STATE.IDLE)
 
 func set_state(new_state: PLAYER_STATE) -> void:
 	
@@ -79,9 +81,15 @@ func set_state(new_state: PLAYER_STATE) -> void:
 	
 	match _state:
 		PLAYER_STATE.IDLE:
-			animated_sprite_2d.play("idle")
-		PLAYER_STATE.RUN:
-			animated_sprite_2d.play("run")
+			animated_sprite_2d.play("Idle")
+		PLAYER_STATE.UP:
+			animated_sprite_2d.play("Up")
+		PLAYER_STATE.DOWN:
+			animated_sprite_2d.play("Down")
+		PLAYER_STATE.RIGHT:
+			animated_sprite_2d.play("Right")
+		PLAYER_STATE.LEFT:
+			animated_sprite_2d.play("Left")
 			
 			
 func startDash(direction):
