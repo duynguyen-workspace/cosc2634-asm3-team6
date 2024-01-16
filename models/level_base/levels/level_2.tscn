@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cps8m05d1ldoe"]
+[gd_scene load_steps=21 format=3 uid="uid://cps8m05d1ldoe"]
 
 [ext_resource type="Texture2D" uid="uid://bfmikeuj7i51q" path="res://assets/Tile/tilemap1.png" id="1_i57kv"]
 [ext_resource type="Texture2D" uid="uid://b1jksoegrivrb" path="res://assets/Tile/tilemap.png" id="2_ssh2i"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="8_1pe8m"]
 [ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="9_hvpan"]
 [ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="10_jjs8e"]
+[ext_resource type="AudioStream" uid="uid://gsdjwuqie1a5" path="res://assets/sounds/Level Sounds/Jungle.mp3" id="11_qog3s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baw5h"]
 texture = ExtResource("1_i57kv")
@@ -3122,3 +3123,7 @@ position = Vector2(437, 14)
 
 [node name="Waypoint9" parent="EnemyPaths/BossPath2" instance=ExtResource("10_jjs8e")]
 position = Vector2(759, 17)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_qog3s")
+autoplay = true
