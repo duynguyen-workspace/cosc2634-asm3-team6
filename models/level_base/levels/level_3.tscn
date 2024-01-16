@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://co12rg376fkxy"]
+[gd_scene load_steps=31 format=3 uid="uid://co12rg376fkxy"]
 
 [ext_resource type="PackedScene" uid="uid://bmuldgmn0akoe" path="res://models/level_base/level_base.tscn" id="1_x5grk"]
 [ext_resource type="Texture2D" uid="uid://68alvu0jtomb" path="res://assets/spritesheets/floor.png" id="2_nf7hq"]
@@ -8,17 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b1jksoegrivrb" path="res://assets/Tile/tilemap.png" id="5_5dqo8"]
 [ext_resource type="Texture2D" uid="uid://d1jl5flgu1lel" path="res://assets/tiles/Serene_Village_16x16.png" id="5_roqt3"]
 [ext_resource type="Texture2D" uid="uid://c7jwmakrxbtdj" path="res://assets/tiles/Interiors_free_16x16.png" id="6_7q7lc"]
-[ext_resource type="Texture2D" path="res://assets/Spritesheet/House/CoffeeShopStuff.png" id="6_jbita"]
 [ext_resource type="Texture2D" uid="uid://d0l7kxiia5cdy" path="res://assets/tiles/TX Tileset Grass.png" id="7_pxc54"]
 [ext_resource type="Texture2D" uid="uid://cypyrt52dg7h" path="res://assets/tiles/TX Tileset Stone Ground.png" id="8_ag5n1"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tilemap2 00.04.24.png" id="8_b0afh"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tilemap22 (1).png" id="8_r1jk1"]
 [ext_resource type="Texture2D" uid="uid://mc73gt7dfweh" path="res://assets/Spritesheet/Rock/RockPack128x128.png" id="9_r64q4"]
 [ext_resource type="Texture2D" uid="uid://ckdo60upylael" path="res://assets/Spritesheet/Others/Utilities/Terrain/Terrain (16x16).png" id="10_nshie"]
 [ext_resource type="Texture2D" uid="uid://blqebo0gudodm" path="res://assets/tiles/B-C-D-E_Serene_Village_01.png" id="13_k7uob"]
-[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/Trashbin/blue_trashbin.png" id="14_srrh7"]
-[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/Trashbin/orangle_trashbin.png" id="15_s2evn"]
-[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/Trashbin/green_trashbin.png" id="16_dh75q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8kjb"]
 texture = ExtResource("2_nf7hq")
@@ -13323,7 +13317,6 @@ texture = ExtResource("5_roqt3")
 15:44/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kc5sd"]
-texture = ExtResource("6_jbita")
 margins = Vector2i(3, 5)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -17821,7 +17814,6 @@ margins = Vector2i(2, 2)
 45:21/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qijtg"]
-texture = ExtResource("8_r1jk1")
 separation = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -18905,7 +18897,6 @@ separation = Vector2i(2, 2)
 23:14/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xekxp"]
-texture = ExtResource("8_b0afh")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -36338,28 +36329,14 @@ layer_9/y_sort_origin = 0
 layer_9/z_index = 0
 layer_9/tile_data = PackedInt32Array(1572904, 1310729, 8, 1638440, 1310729, 9, 1572905, 1376265, 8, 1638441, 1376265, 9, 1638442, 1310729, 8, 1703978, 1310729, 9, 1638443, 1376265, 8, 1703979, 1376265, 9, 1507370, 1310729, 8, 1572906, 1310729, 9, 1507371, 1376265, 8, 1572907, 1376265, 9, 2490408, 1310729, 8, 2555944, 1310729, 9, 2490409, 1376265, 8, 2555945, 1376265, 9, 2424872, 1376265, 8, 1900549, 1310729, 8, 1966085, 1310729, 9, 1900550, 1376265, 8, 1966086, 1376265, 9, 1966087, 1310729, 8, 1966088, 1376265, 8, 327712, 1310729, 8, 393248, 1310729, 9, 327713, 1376265, 8, 393249, 1376265, 9, 393250, 1310729, 8, 458786, 1310729, 9, 393251, 1376265, 8, 458787, 1376265, 9, 2883612, 1703945, 6, 2949148, 1703945, 7, 2883613, 1769481, 6, 2949149, 1769481, 7, 524289, 12, 6, 393218, 65548, 4, 458754, 65548, 5, 524290, 65548, 6, 589826, 65548, 7, 655362, 65548, 8, 131103, 12, 6, 32, 65548, 4, 65568, 65548, 5, 131104, 65548, 6, 196640, 65548, 7, 262176, 65548, 8, 2424893, 12, 5, 2490429, 12, 6, 2359358, 65548, 4, 2424894, 65548, 5, 2490430, 65548, 6, 2555966, 65548, 7, 2621502, 65548, 8, 2752529, 12, 5, 2818065, 12, 6, 2686994, 65548, 4, 2752530, 65548, 5, 2818066, 65548, 6, 2883602, 65548, 7, 2949138, 65548, 8, 2555946, 786442, 71, 2621482, 786442, 72, 2687018, 786442, 73, 2555947, 851978, 71, 2621483, 851978, 72, 2687019, 851978, 73, 2555948, 917514, 71, 2621484, 917514, 72, 2687020, 917514, 73, 2555949, 983050, 71, 2621485, 983050, 72, 2687021, 983050, 73, 2555959, 786442, 71, 2621495, 786442, 72, 2687031, 786442, 73, 2555960, 851978, 71, 2621496, 851978, 72, 2687032, 851978, 73, 2555961, 917514, 71, 2621497, 917514, 72, 2687033, 917514, 73, 2555962, 983050, 71, 2621498, 983050, 72, 2687034, 983050, 73, 1572882, 262154, 18, 1638418, 262154, 19, 1703954, 262154, 20, 1769490, 262154, 21, 1572883, 327690, 18, 1638419, 327690, 19, 1703955, 327690, 20, 1769491, 327690, 21, 2555952, 1572873, 22, 2621488, 1572873, 23, 2555953, 1638409, 22, 2621489, 1638409, 23, 2555954, 1703945, 22, 2621490, 1703945, 23, 2555955, 1769481, 22, 2621491, 1769481, 23, 3014684, 1572873, 20, 3080220, 1572873, 21, 3014685, 1638409, 20, 3080221, 1638409, 21, 3014686, 1703945, 20, 3080222, 1703945, 21, 3014687, 1769481, 20, 3080223, 1769481, 21, 3014688, 1703945, 18, 3080224, 1703945, 19, 3014689, 1441801, 22, 3080225, 1441801, 23, 3014690, 1441801, 22, 3080226, 1441801, 23, 3014691, 1507337, 22, 3080227, 1507337, 23, 3014692, 1835017, 18, 3080228, 1835017, 19, 3014693, 1703945, 22, 3080229, 1703945, 23, 3014694, 1769481, 22, 3080230, 1769481, 23, 2031623, 1310729, 9, 2031624, 1376265, 9, 917536, 1310729, 8, 983072, 1310729, 9, 917537, 1376265, 8, 983073, 1376265, 9, 983067, 1310729, 8, 1048603, 1310729, 9, 983068, 1376265, 8, 1048604, 1376265, 9, 983070, 589825, 3, 1048607, 589825, 3)
 
-[node name="HUD" parent="CanvasLayer" index="0"]
-anchors_preset = -1
-anchor_left = -0.00488281
-anchor_top = 0.0338542
-anchor_right = 0.996094
-anchor_bottom = 1.03125
-offset_left = 5.0
-offset_top = -25.0
-offset_right = 5.0
-offset_bottom = -25.0
-
-[node name="BlueTrashbin" type="Sprite2D" parent="." index="2"]
+[node name="BlueTrashbin" type="Sprite2D" parent="." index="1"]
 position = Vector2(411, 134)
 scale = Vector2(1.5, 1.502)
-texture = ExtResource("14_srrh7")
 
-[node name="OrangeTrashbin" type="Sprite2D" parent="." index="3"]
+[node name="OrangeTrashbin" type="Sprite2D" parent="." index="2"]
 position = Vector2(980, 720)
 scale = Vector2(1.5, 1.502)
-texture = ExtResource("15_s2evn")
 
-[node name="GreenTrashbin" type="Sprite2D" parent="." index="4"]
+[node name="GreenTrashbin" type="Sprite2D" parent="." index="3"]
 position = Vector2(173, 494)
 scale = Vector2(1.5, 1.502)
-texture = ExtResource("16_dh75q")

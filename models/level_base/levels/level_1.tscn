@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://rflbrrxgenas"]
+[gd_scene load_steps=78 format=3 uid="uid://rflbrrxgenas"]
 
 [ext_resource type="PackedScene" uid="uid://bmuldgmn0akoe" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
@@ -39,6 +39,8 @@
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="37_h3dhy"]
 [ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="38_mhpo2"]
 [ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="39_okr5h"]
+[ext_resource type="PackedScene" uid="uid://c0ms7ut6ulamq" path="res://models/objects/trash/trash.tscn" id="40_jkayv"]
+[ext_resource type="PackedScene" uid="uid://crkwwsbspkoa7" path="res://models/objects/trash/trash_bin_2.tscn" id="41_wv0gg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yldi"]
 texture = ExtResource("2_ywltu")
@@ -30249,13 +30251,16 @@ autoplay = true
 position = Vector2(207, 183)
 
 [node name="Boss" parent="." index="3" instance=ExtResource("38_mhpo2")]
+visible = false
 position = Vector2(561, 530)
 patrol_points = NodePath("../EnemyPaths/BossPath")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="4"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_xummp")
 
 [node name="EnemyPaths" type="Node2D" parent="." index="5"]
+visible = false
 
 [node name="BossPath" type="Node2D" parent="EnemyPaths" index="0"]
 
@@ -30270,3 +30275,14 @@ position = Vector2(694, 630)
 
 [node name="Waypoint4" parent="EnemyPaths/BossPath" index="3" instance=ExtResource("39_okr5h")]
 position = Vector2(563, 619)
+
+[node name="Trash" parent="." index="6" instance=ExtResource("40_jkayv")]
+position = Vector2(278, 182)
+
+[node name="Trash2" parent="." index="7" instance=ExtResource("40_jkayv")]
+position = Vector2(205, 406)
+
+[node name="TrashBin2" parent="." index="8" instance=ExtResource("41_wv0gg")]
+position = Vector2(450, 111)
+
+[editable path="Player"]
