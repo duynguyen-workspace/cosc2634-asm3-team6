@@ -17,7 +17,7 @@ func _ready():
 	availableSpawnPoints = spawnPoints
 
 func spawnTrash():
-	var trashScene = preload("res://models/objects/trash/trash.tscn")  # Load your trash scene
+	var trashScene = preload("res://models/objects/trash/trash.tscn") # Load your trash scene
 	
 	# print(availableSpawnPoints)
 	if availableSpawnPoints.size() > 0:

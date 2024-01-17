@@ -36,8 +36,8 @@ func _process(delta):
 		#input
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * 200 
+	
 	# Called dash function
-
 	if Input.is_action_just_pressed("Dash") and dash:
 		canDash = true
 		dash_time.start()
@@ -61,7 +61,6 @@ func _process(delta):
 	calculate_states()
 
 func calculate_states() -> void:
-	print(velocity.y)
 	if velocity.x < 0:
 		set_state(PLAYER_STATE.LEFT)
 	elif velocity.x > 0:
@@ -95,7 +94,6 @@ func set_state(new_state: PLAYER_STATE) -> void:
 func startDash(direction):
 	velocity = direction * 600
 	dash = false
-	
 
 func _on_dash_cooldown_timeout():
 	dash = true
@@ -161,7 +159,6 @@ func sort_trash(trashbin, trash):
 	#
 	trash_node.remove_child(trash)
 	heldTrash = null
-	
 	
 	# Additional logic (e.g., update inventory) can be added here
 

@@ -1,24 +1,13 @@
-[gd_scene load_steps=34 format=3 uid="uid://cone42vlau8lj"]
+[gd_scene load_steps=23 format=3 uid="uid://dpnn7ho5moq5g"]
 
 [ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_x5grk"]
 [ext_resource type="Texture2D" uid="uid://68alvu0jtomb" path="res://assets/spritesheets/floor.png" id="2_nf7hq"]
 [ext_resource type="Texture2D" uid="uid://cpe7eo8el2xd" path="res://assets/Tile/16x16/Tilesets/Solaria Demo Update 01.png" id="3_v2ldo"]
 [ext_resource type="Texture2D" uid="uid://bfmikeuj7i51q" path="res://assets/Tile/tilemap1.png" id="4_0a74v"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tiles/decorations-medieval.png" id="4_mkbk4"]
 [ext_resource type="Texture2D" uid="uid://b1jksoegrivrb" path="res://assets/Tile/tilemap.png" id="5_5dqo8"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tiles/Serene_Village_16x16.png" id="5_ymcri"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tilemap2.png" id="6_4g7uq"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tiles/Interiors_free_16x16.png" id="8_frkx5"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tiles/TX Tileset Grass.png" id="9_67aix"]
 [ext_resource type="Texture2D" uid="uid://mc73gt7dfweh" path="res://assets/Spritesheet/Rock/RockPack128x128.png" id="9_r64q4"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tiles/TX Tileset Stone Ground.png" id="10_ie7ne"]
 [ext_resource type="Texture2D" uid="uid://ckdo60upylael" path="res://assets/Spritesheet/Others/Utilities/Terrain/Terrain (16x16).png" id="10_nshie"]
-[ext_resource type="Texture2D" path="res://assets/Tile/tiles/B-C-D-E_Serene_Village_01.png" id="13_dx6at"]
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="15_afrrm"]
-[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/blue_trashbin.png" id="15_yfqmx"]
-[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/orangle_trashbin.png" id="16_julba"]
-[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/green_trashbin.png" id="17_yfprn"]
-[ext_resource type="AudioStream" path="res://assets/sounds/Level Sounds/city_soundtra.mp3" id="19_kgmmk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8kjb"]
 texture = ExtResource("2_nf7hq")
@@ -1197,7 +1186,6 @@ texture = ExtResource("3_v2ldo")
 12:14/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g2qgq"]
-texture = ExtResource("4_mkbk4")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -11159,7 +11147,6 @@ texture = ExtResource("4_mkbk4")
 31:117/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vgay"]
-texture = ExtResource("5_ymcri")
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
@@ -13361,7 +13348,6 @@ texture = ExtResource("5_ymcri")
 15:44/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqcow"]
-texture = ExtResource("6_4g7uq")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -22660,7 +22646,6 @@ separation = Vector2i(1, 1)
 26:17/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27u42"]
-texture = ExtResource("8_frkx5")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -26014,7 +25999,6 @@ texture = ExtResource("8_frkx5")
 15:88/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xoaqc"]
-texture = ExtResource("9_67aix")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -26785,7 +26769,6 @@ texture = ExtResource("9_67aix")
 15:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2w6xc"]
-texture = ExtResource("10_ie7ne")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -28595,7 +28578,6 @@ texture = ExtResource("10_nshie")
 20:10/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mic6"]
-texture = ExtResource("13_dx6at")
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
@@ -31278,21 +31260,17 @@ layer_9/tile_data = PackedInt32Array(1572904, 1310729, 8, 1638440, 1310729, 9, 1
 [node name="BlueTrashbin" type="Sprite2D" parent="." index="1"]
 position = Vector2(411, 134)
 scale = Vector2(1.5, 1.502)
-texture = ExtResource("15_yfqmx")
 
 [node name="OrangeTrashbin" type="Sprite2D" parent="." index="2"]
 position = Vector2(980, 720)
 scale = Vector2(1.5, 1.502)
-texture = ExtResource("16_julba")
 
 [node name="GreenTrashbin" type="Sprite2D" parent="." index="3"]
 position = Vector2(173, 494)
 scale = Vector2(1.5, 1.502)
-texture = ExtResource("17_yfprn")
 
 [node name="Player" parent="." index="4" instance=ExtResource("15_afrrm")]
 position = Vector2(391, 382)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5"]
-stream = ExtResource("19_kgmmk")
 autoplay = true

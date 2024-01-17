@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://b3u8h7fsenqc5"]
+[gd_scene load_steps=79 format=3 uid="uid://bw8in6mgtxsyu"]
 
 [ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
@@ -39,7 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://c1as1acv84eud" path="res://assets/spritesheets/beach/Beach Tileset.png" id="29_e06dd"]
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="37_h3dhy"]
 [ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="39_okr5h"]
+[ext_resource type="PackedScene" uid="uid://b4wtc0mkwvtpb" path="res://views/hud/hud.tscn" id="41_ar0yg"]
 [ext_resource type="PackedScene" uid="uid://cf217u3f5a84t" path="res://models/objects/trashbin/trash_bin.tscn" id="41_le8q1"]
+[ext_resource type="PackedScene" uid="uid://bm1ugpqrc6fyb" path="res://models/objects/trash/trash.tscn" id="42_42qn6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yldi"]
 texture = ExtResource("2_ywltu")
@@ -30314,4 +30316,16 @@ trash_id = 1
 position = Vector2(554, 102)
 trash_id = 2
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer" index="0"]
+position = Vector2(513, 51)
+
+[node name="HUD" parent="CanvasLayer/Node2D" index="0" instance=ExtResource("41_ar0yg")]
+
+[node name="Trash" parent="." index="8" instance=ExtResource("42_42qn6")]
+position = Vector2(280, 178)
+
 [connection signal="timeout" from="SpawnPoints/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+
+[editable path="Player"]
