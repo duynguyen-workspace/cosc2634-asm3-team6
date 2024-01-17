@@ -7,10 +7,9 @@ var selection_scene: PackedScene = preload("res://views/level_selection_menu/lev
 var settings_scene: PackedScene = preload("res://views/settings_scene/settings_scene.tscn")
 var instructions_scene: PackedScene = preload("res://views/instructions_scene/instructions_scene.tscn")
 var credits_scene: PackedScene = preload("res://views/credits_scene/credits_scene.tscn")
-
+var loading_scene: PackedScene = preload("res://views/loading_scene/loading_scene.tscn")
 
 var _level_selected: String
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,12 +37,16 @@ func load_instructions_scene() -> void:
 func load_credits_scene() -> void:
 	get_tree().change_scene_to_packed(credits_scene)
 
-'''
+func load_loading_scene() -> void:
+	get_tree().change_scene_to_packed(loading_scene)
+
+
 func load_level_scene(level_number: String) -> void:
 	if level_number == "1":
-		get_tree().change_scene_to_packed(level_1_scene)
+		# get_tree().change_scene_to_packed(level_1_scene)
+		load_loading_scene()
 	if level_number == "2":
-		get_tree().change_scene_to_packed(level_2_scene)
+		# get_tree().change_scene_to_packed(level_2_scene)
+		load_loading_scene()
 	else:
-		pass
-'''
+		load_loading_scene()
