@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cps8m05d1ldoe"]
+[gd_scene load_steps=23 format=3 uid="uid://cps8m05d1ldoe"]
 
 [ext_resource type="Texture2D" uid="uid://bfmikeuj7i51q" path="res://assets/Tile/tilemap1.png" id="1_i57kv"]
 [ext_resource type="Texture2D" uid="uid://b1jksoegrivrb" path="res://assets/Tile/tilemap.png" id="2_ssh2i"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="9_hvpan"]
 [ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="10_jjs8e"]
 [ext_resource type="AudioStream" path="res://assets/sounds/Level Sounds/Jungle.mp3" id="11_qog3s"]
+[ext_resource type="PackedScene" uid="uid://dh888i1kbadn7" path="res://models/objects/trash/trash.tscn" id="12_3ypos"]
+[ext_resource type="PackedScene" uid="uid://cf217u3f5a84t" path="res://models/objects/trashbin/trash_bin.tscn" id="13_bily7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baw5h"]
 texture = ExtResource("1_i57kv")
@@ -3089,6 +3091,10 @@ position = Vector2(996, 234)
 scale = Vector2(0.4, 0.4)
 patrol_points = NodePath("../EnemyPaths/BossPath1")
 
+[node name="AnimatedSprite2D" parent="Boss" index="0"]
+position = Vector2(0, -2.5)
+scale = Vector2(3, 3)
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_xw1f0")
 
@@ -3100,11 +3106,31 @@ navigation_polygon = SubResource("NavigationPolygon_xw1f0")
 position = Vector2(995, 238)
 
 [node name="Waypoint2" parent="EnemyPaths/BossPath1" instance=ExtResource("10_jjs8e")]
-position = Vector2(864, 241)
+position = Vector2(547, 55)
 
 [node name="Waypoint3" parent="EnemyPaths/BossPath1" instance=ExtResource("10_jjs8e")]
-position = Vector2(860, 304)
+position = Vector2(834, 395)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_qog3s")
 autoplay = true
+
+[node name="Trash" parent="." instance=ExtResource("12_3ypos")]
+position = Vector2(221, 176)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TrashBins" type="Node2D" parent="."]
+
+[node name="TrashBin" parent="TrashBins" instance=ExtResource("13_bily7")]
+position = Vector2(912, 35)
+
+[node name="TrashBin2" parent="TrashBins" instance=ExtResource("13_bily7")]
+position = Vector2(840, 705)
+trash_id = 1
+
+[node name="TrashBin3" parent="TrashBins" instance=ExtResource("13_bily7")]
+position = Vector2(222, 714)
+trash_id = 2
+
+[editable path="Boss"]

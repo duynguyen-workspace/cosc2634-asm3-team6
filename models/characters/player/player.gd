@@ -30,7 +30,7 @@ func _ready():
 	
 func _physics_process(delta):
 	# Update trash position
-	update_trash_state()
+	update_trash_state(heldTrash)
 
 func _process(delta):
 		#input
@@ -48,10 +48,10 @@ func _process(delta):
 	# Pickup, drop and sort functions
 	if Input.is_action_just_pressed("pickup") and canPick:
 		pickup_trash(lastTrashObject)
-		
-	if Input.is_action_just_pressed("drop"):
+
+	if Input.is_action_just_pressed("drop") and heldTrash != null:
 		drop_trash()
-		
+
 	if Input.is_action_just_pressed("sort") and canSort:
 		sort_trash(lastTrashbinObject, lastTrashObject)
 	
@@ -104,32 +104,32 @@ func _on_dash_time_timeout():
 
 func _on_trash_detector_body_entered(body):
 	if body.is_in_group("trash") && heldTrash == null:
-		# print("collide with trash")
-		
+		print("true")
+
 		# Display the pickup label
 		label.visible = true
-		
+
 		# Allow trash object to be picked
 		canPick = true
-		
+
 		# Get the current trash object
 		lastTrashObject = body
-		
+
 		label.text = "PRESS J TO PICK"
-	
+
 	if body.is_in_group("bins"):
 		print("Collide trashbins")
-		
+
 		# Display the pickup label
 		label.visible = true
-		
+
 		# Allow trash object to be sorted
 		if heldTrash != null && canPick == false:
 			canSort = true
-		
+
 		# Get the current trash object
 		lastTrashbinObject = body
-		
+
 		label.text = "PRESS I TO SORT"
 		
 func sort_trash(trashbin, trash):
@@ -166,32 +166,33 @@ func pickup_trash(trash):
 	
 	# Pick up the trash object
 	heldTrash = trash
-	canPick = false
-	
-	trash.position = trash_node.position
 	trash_node.add_child(trash)
 	
-	
+	canPick = false
 	# Additional logic (e.g., update inventory) can be added here
 	
 func drop_trash():
 	if heldTrash == null:
 		return
 	
+	print("drop")
+	
 	# Place the trash at the player's position
 	heldTrash.position = position
+	
+	get_tree().root.add_child(heldTrash) 
 	heldTrash = null
 
-func update_trash_state():
+func update_trash_state(trash: Node2D):
 	if heldTrash == null:
 		return
-	
-	heldTrash.position = trash_node.position
 	
 	if canSort:
 		label.text = "PRESS I TO SORT"
 	else:
 		label.text = "PRESS U TO DROP"
+
+	trash.position = trash_pos.global_position
 
 func _on_trash_detector_body_exited(body):
 	if heldTrash == null:
