@@ -85,6 +85,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 30
 
 [node name="VB" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles"]
 layout_mode = 2
@@ -100,7 +101,7 @@ size_flags_vertical = 4
 [node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Role"
+text = "Game Mechanics Developer"
 label_settings = SubResource("LabelSettings_vrx1y")
 
 [node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB"]
@@ -115,7 +116,7 @@ layout_mode = 2
 [node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Role"
+text = "Game & Server Developer"
 label_settings = SubResource("LabelSettings_vrx1y")
 
 [node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB2"]
@@ -185,7 +186,7 @@ layout_mode = 2
 [node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB4"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Role"
+text = "UI Developer & Game Designer"
 label_settings = SubResource("LabelSettings_vrx1y")
 
 [node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB4"]
