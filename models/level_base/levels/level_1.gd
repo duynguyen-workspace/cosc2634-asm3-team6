@@ -22,7 +22,7 @@ func _on_spawn_timer_timeout():
 
 func spawnTrash():
 	var trashScene = preload("res://models/objects/trash/trash.tscn")  # Load your trash scene
-	print(availableSpawnPoints)
+	# print(availableSpawnPoints)
 	if availableSpawnPoints.size() > 0:
 		var randomSpawnPointIndex = randi() % availableSpawnPoints.size()
 		var randomSpawnPoint = availableSpawnPoints[randomSpawnPointIndex]

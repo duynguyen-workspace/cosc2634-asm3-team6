@@ -104,7 +104,7 @@ func _on_dash_time_timeout():
 
 func _on_trash_detector_body_entered(body):
 	if body.is_in_group("trash") && heldTrash == null:
-		print("true")
+		# print("collide with trash")
 		
 		# Display the pickup label
 		label.visible = true
@@ -163,11 +163,14 @@ func sort_trash(trashbin, trash):
 	# Additional logic (e.g., update inventory) can be added here
 
 func pickup_trash(trash):
+	
 	# Pick up the trash object
 	heldTrash = trash
 	canPick = false
 	
-	# heldTrash.position = trash_pos.position
+	trash.position = trash_node.position
+	trash_node.add_child(trash)
+	
 	
 	# Additional logic (e.g., update inventory) can be added here
 	
@@ -175,22 +178,20 @@ func drop_trash():
 	if heldTrash == null:
 		return
 	
-	# Place the object at the player's position
+	# Place the trash at the player's position
 	heldTrash.position = position
-	
-	add_child(heldTrash) 
 	heldTrash = null
 
 func update_trash_state():
 	if heldTrash == null:
 		return
 	
+	heldTrash.position = trash_node.position
+	
 	if canSort:
 		label.text = "PRESS I TO SORT"
 	else:
 		label.text = "PRESS U TO DROP"
-		
-	heldTrash.position = trash_pos.position
 
 func _on_trash_detector_body_exited(body):
 	if heldTrash == null:

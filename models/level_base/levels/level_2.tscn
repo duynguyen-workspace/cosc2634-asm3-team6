@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="8_1pe8m"]
 [ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="9_hvpan"]
 [ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="10_jjs8e"]
-[ext_resource type="AudioStream" uid="uid://gsdjwuqie1a5" path="res://assets/sounds/Level Sounds/Jungle.mp3" id="11_qog3s"]
+[ext_resource type="AudioStream" path="res://assets/sounds/Level Sounds/Jungle.mp3" id="11_qog3s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_baw5h"]
 texture = ExtResource("1_i57kv")

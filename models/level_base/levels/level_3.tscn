@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ock6uh7ch7o" path="res://assets/Tile/tiles/decorations-medieval.png" id="4_mkbk4"]
 [ext_resource type="Texture2D" uid="uid://b1jksoegrivrb" path="res://assets/Tile/tilemap.png" id="5_5dqo8"]
 [ext_resource type="Texture2D" uid="uid://d1jl5flgu1lel" path="res://assets/Tile/tiles/Serene_Village_16x16.png" id="5_ymcri"]
-[ext_resource type="Texture2D" uid="uid://ctqwvnylbhy6" path="res://assets/Tile/tilemap2.png" id="6_4g7uq"]
+[ext_resource type="Texture2D" path="res://assets/Tile/tilemap2.png" id="6_4g7uq"]
 [ext_resource type="Texture2D" uid="uid://c7jwmakrxbtdj" path="res://assets/Tile/tiles/Interiors_free_16x16.png" id="8_frkx5"]
 [ext_resource type="Texture2D" uid="uid://d0l7kxiia5cdy" path="res://assets/Tile/tiles/TX Tileset Grass.png" id="9_67aix"]
 [ext_resource type="Texture2D" uid="uid://mc73gt7dfweh" path="res://assets/Spritesheet/Rock/RockPack128x128.png" id="9_r64q4"]
@@ -15,10 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://ckdo60upylael" path="res://assets/Spritesheet/Others/Utilities/Terrain/Terrain (16x16).png" id="10_nshie"]
 [ext_resource type="Texture2D" uid="uid://blqebo0gudodm" path="res://assets/Tile/tiles/B-C-D-E_Serene_Village_01.png" id="13_dx6at"]
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="15_afrrm"]
-[ext_resource type="Texture2D" uid="uid://bgdtp5embmuls" path="res://assets/Spritesheet/Trash/blue_trashbin.png" id="15_yfqmx"]
-[ext_resource type="Texture2D" uid="uid://bb7rh7u6ct3p6" path="res://assets/Spritesheet/Trash/orangle_trashbin.png" id="16_julba"]
-[ext_resource type="Texture2D" uid="uid://d17un83k82bo8" path="res://assets/Spritesheet/Trash/green_trashbin.png" id="17_yfprn"]
-[ext_resource type="AudioStream" uid="uid://cxb10vk04s7k7" path="res://assets/sounds/Level Sounds/city_soundtra.mp3" id="19_kgmmk"]
+[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/blue_trashbin.png" id="15_yfqmx"]
+[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/orangle_trashbin.png" id="16_julba"]
+[ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/green_trashbin.png" id="17_yfprn"]
+[ext_resource type="AudioStream" path="res://assets/sounds/Level Sounds/city_soundtra.mp3" id="19_kgmmk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8kjb"]
 texture = ExtResource("2_nf7hq")
