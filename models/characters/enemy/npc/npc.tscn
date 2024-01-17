@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpc3evwrtlsa7"]
+
+[ext_resource type="Texture2D" uid="uid://b72u51hwoyhle" path="res://assets/enemies/dog-idle.png" id="1_ca32f"]
+[ext_resource type="Script" path="res://models/characters/enemy/npc/npc.gd" id="1_gx4j7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm0dh"]
+atlas = ExtResource("1_ca32f")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypows"]
+atlas = ExtResource("1_ca32f")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm4lk"]
+atlas = ExtResource("1_ca32f")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra85k"]
+atlas = ExtResource("1_ca32f")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1t82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm0dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypows")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rm4lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra85k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_80dka"]
+radius = 14.0
+height = 28.0
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_gx4j7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l1t82")
+frame_progress = 0.183502
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 11)
+shape = SubResource("CapsuleShape2D_80dka")
+
+[node name="NavAgent" type="NavigationAgent2D" parent="."]
+
+[connection signal="velocity_computed" from="NavAgent" to="." method="_on_nav_agent_velocity_computed"]
