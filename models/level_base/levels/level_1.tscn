@@ -30289,7 +30289,7 @@ position = Vector2(413, 182)
 position = Vector2(217, 343)
 
 [node name="Spawn 6" type="Marker2D" parent="SpawnPoints" index="5"]
-position = Vector2(208, 467)
+position = Vector2(131, 459)
 
 [node name="Spawn 7" type="Marker2D" parent="SpawnPoints" index="6"]
 position = Vector2(462, 420)
@@ -30304,14 +30304,14 @@ autostart = true
 [node name="Bins" type="Node2D" parent="." index="6"]
 
 [node name="TrashBin" parent="Bins" index="0" instance=ExtResource("41_le8q1")]
-position = Vector2(638, 97)
+position = Vector2(638, 102)
 
 [node name="TrashBin2" parent="Bins" index="1" instance=ExtResource("41_le8q1")]
-position = Vector2(468, 95)
+position = Vector2(465, 102)
 trash_id = 1
 
 [node name="TrashBin3" parent="Bins" index="2" instance=ExtResource("41_le8q1")]
-position = Vector2(550, 96)
+position = Vector2(554, 102)
 trash_id = 2
 
 [connection signal="timeout" from="SpawnPoints/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
