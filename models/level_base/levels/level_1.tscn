@@ -1,8 +1,9 @@
-[gd_scene load_steps=79 format=3 uid="uid://rflbrrxgenas"]
+[gd_scene load_steps=77 format=3 uid="uid://rflbrrxgenas"]
 
 [ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_rk50s"]
 [ext_resource type="AudioStream" uid="uid://c21dp1wswfymp" path="res://assets/sounds/Level Sounds/SummerChallenge.mp3" id="2_05wef"]
 [ext_resource type="Texture2D" uid="uid://ccovpiwcd3rwm" path="res://assets/Tile/tiles/tilemap.png" id="2_bdhp6"]
+[ext_resource type="Script" path="res://models/level_base/levels/level_1.gd" id="2_e3oqf"]
 [ext_resource type="Texture2D" uid="uid://d3vuwp24ymkbp" path="res://assets/spritesheets/rocks/Rock5_1_no_shadow.png" id="7_iyp08"]
 [ext_resource type="Texture2D" uid="uid://bqsv28njta7k2" path="res://assets/Tile/tiles/PathAndObjects.png" id="7_wvhr0"]
 [ext_resource type="Texture2D" uid="uid://0y2x21k1j4cn" path="res://assets/spritesheets/rocks/Rock5_2.png" id="8_fcyli"]
@@ -37,11 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://c1as1acv84eud" path="res://assets/spritesheets/beach/Beach Tileset.png" id="29_e06dd"]
 [ext_resource type="Texture2D" uid="uid://cexi467574b1f" path="res://assets/Tile/tiles/tilemap1.png" id="30_5uotw"]
 [ext_resource type="PackedScene" uid="uid://cjj6m416gm3re" path="res://models/characters/player/player.tscn" id="37_h3dhy"]
-[ext_resource type="PackedScene" uid="uid://cwobl32hac18e" path="res://models/characters/enemy/boss/boss.tscn" id="38_mhpo2"]
 [ext_resource type="PackedScene" uid="uid://bje1c1v0guvbq" path="res://models/objects/waypoint/waypoint.tscn" id="39_okr5h"]
-[ext_resource type="Texture2D" uid="uid://bgdtp5embmuls" path="res://assets/Spritesheet/Trash/blue_trashbin.png" id="40_s7b5a"]
-[ext_resource type="Texture2D" uid="uid://bb7rh7u6ct3p6" path="res://assets/Spritesheet/Trash/orangle_trashbin.png" id="41_pnfv6"]
-[ext_resource type="Texture2D" uid="uid://d17un83k82bo8" path="res://assets/Spritesheet/Trash/green_trashbin.png" id="42_0cvcc"]
+[ext_resource type="PackedScene" uid="uid://cf217u3f5a84t" path="res://models/objects/trashbin/trash_bin.tscn" id="42_bfpp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yldi"]
 texture = ExtResource("2_bdhp6")
@@ -30229,6 +30227,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), Packe
 outlines = Array[PackedVector2Array]([PackedVector2Array(81, 641, 82, 226, 129, 223, 130, 114, 211, 113, 242, 80, 242, 146, 322, 148, 319, 81, 402, 80, 401, 63, 671, 68, 670, 237, 923, 229, 927, 128, 958, 126, 958, 636, 894, 636, 872, 705, 133, 702, 131, 643), PackedVector2Array(168, 584, 166, 503, 333, 501, 335, 558, 366, 560, 372, 584, 400, 593, 402, 628, 343, 632, 344, 667, 164, 670), PackedVector2Array(799, 262, 800, 367, 859, 365, 857, 262, 806, 262), PackedVector2Array(659, 441, 656, 396, 270, 396, 270, 440)])
 
 [node name="Level1" instance=ExtResource("1_rk50s")]
+script = ExtResource("2_e3oqf")
 
 [node name="TileMap" parent="." index="0"]
 tile_set = SubResource("TileSet_sd8bh")
@@ -30256,21 +30255,17 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(1703955, 131101, 3, 1638429, 196637, 0, 2949146, 196637, 3, 3014698, 196637, 3, 2687038, 196637, 3, 3080253, 196637, 3, 3014713, 196637, 3, 3080223, 65565, 3, 3014665, 65565, 3, 1376257, 65565, 3, 983059, 262176, 16, 1048595, 262176, 16, 983073, 393248, 16, 851987, 262176, 15, 917523, 393248, 16, 851988, 327712, 15, 851989, 327712, 15, 851990, 327712, 15, 851991, 327712, 15, 851997, 327712, 15, 851998, 327712, 15, 851999, 327712, 15, 852000, 327712, 15, 852001, 393248, 15, 917537, 393248, 16, 1638440, 131101, 3, 1703970, 29, 3, 1114145, 262176, 17, 1114146, 327712, 15, 1114147, 327712, 15, 1114148, 327712, 15, 1114149, 327712, 15, 1114150, 327712, 15, 1114151, 327712, 15, 1048609, 393248, 16, 2424852, 262176, 16, 2490388, 262176, 16, 2424843, 393248, 16, 2752525, 327712, 15, 2752526, 327712, 15, 2752527, 327712, 15, 2752528, 327712, 15, 2752529, 327712, 15, 2752530, 327712, 15, 2555924, 262176, 16, 720945, 327712, 17, 393259, 393248, 16, 458795, 393248, 16, 524331, 393248, 16, 589867, 393248, 16, 655403, 393248, 16, 720939, 262176, 17, 720940, 327712, 17, 720941, 327712, 15, 589870, 655391, 47, 589871, 720927, 47, 720944, 327712, 15, 393266, 393248, 16, 458802, 262176, 16, 524338, 262176, 16, 589874, 262176, 16, 655410, 262176, 16, 720946, 393248, 17, 1179699, 65567, 53, 1245235, 65567, 54, 1179700, 786463, 13, 1245236, 720927, 12, 1179701, 131103, 53, 1245237, 131103, 54, 1179702, 720927, 14)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="1"]
+[node name="Player" parent="." index="1" instance=ExtResource("37_h3dhy")]
+position = Vector2(221, 197)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
 stream = ExtResource("2_05wef")
-autoplay = true
 
-[node name="Player" parent="." index="2" instance=ExtResource("37_h3dhy")]
-position = Vector2(207, 183)
-
-[node name="Boss" parent="." index="3" instance=ExtResource("38_mhpo2")]
-position = Vector2(561, 530)
-patrol_points = NodePath("../EnemyPaths/BossPath")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="4"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="3"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_xummp")
 
-[node name="EnemyPaths" type="Node2D" parent="." index="5"]
+[node name="EnemyPaths" type="Node2D" parent="." index="4"]
 
 [node name="BossPath" type="Node2D" parent="EnemyPaths" index="0"]
 
@@ -30286,17 +30281,41 @@ position = Vector2(694, 630)
 [node name="Waypoint4" parent="EnemyPaths/BossPath" index="3" instance=ExtResource("39_okr5h")]
 position = Vector2(563, 619)
 
-[node name="BlueTrashbin" type="Sprite2D" parent="." index="6"]
-position = Vector2(393, 97)
-scale = Vector2(1.5, 1.502)
-texture = ExtResource("40_s7b5a")
+[node name="SpawnPoints" type="Node2D" parent="." index="5"]
 
-[node name="OrangeTrashbin" type="Sprite2D" parent="." index="7"]
-position = Vector2(505, 96)
-scale = Vector2(1.5, 1.502)
-texture = ExtResource("41_pnfv6")
+[node name="Spawn 1" type="Marker2D" parent="SpawnPoints" index="0"]
+position = Vector2(422, 194)
 
-[node name="GreenTrashbin" type="Sprite2D" parent="." index="8"]
-position = Vector2(618, 99)
-scale = Vector2(1.5, 1.502)
-texture = ExtResource("42_0cvcc")
+[node name="Spawn 2" type="Marker2D" parent="SpawnPoints" index="1"]
+position = Vector2(585, 197)
+
+[node name="Spawn 3" type="Marker2D" parent="SpawnPoints" index="2"]
+position = Vector2(714, 324)
+
+[node name="Spawn 4" type="Marker2D" parent="SpawnPoints" index="3"]
+position = Vector2(785, 436)
+
+[node name="Spawn 5" type="Marker2D" parent="SpawnPoints" index="4"]
+position = Vector2(217, 275)
+
+[node name="Spawn 6" type="Marker2D" parent="SpawnPoints" index="5"]
+position = Vector2(416, 418)
+
+[node name="SpawnTimer" type="Timer" parent="SpawnPoints" index="6"]
+wait_time = 2.0
+autostart = true
+
+[node name="Bins" type="Node2D" parent="." index="6"]
+
+[node name="TrashBin" parent="Bins" index="0" instance=ExtResource("42_bfpp2")]
+position = Vector2(391, 98)
+
+[node name="TrashBin2" parent="Bins" index="1" instance=ExtResource("42_bfpp2")]
+position = Vector2(502, 101)
+trash_id = 1
+
+[node name="TrashBin3" parent="Bins" index="2" instance=ExtResource("42_bfpp2")]
+position = Vector2(614, 101)
+trash_id = 2
+
+[connection signal="timeout" from="SpawnPoints/SpawnTimer" to="." method="_on_spawn_timer_timeout"]

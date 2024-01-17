@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh888i1kbadn7"]
+
+[ext_resource type="Texture2D" uid="uid://6cy7s88ky8ep" path="res://assets/trash_assets/box.png" id="1_7awud"]
+[ext_resource type="Script" path="res://models/objects/trash/trash.gd" id="1_unkf0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdce5"]
+radius = 30.2655
+
+[node name="Trash" type="RigidBody2D" groups=["trash"]]
+collision_layer = 16
+collision_mask = 36
+mass = 0.01
+freeze = true
+script = ExtResource("1_unkf0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("1_7awud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_vdce5")
