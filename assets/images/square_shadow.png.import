@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnjj67ve1whu4"
-path="res://.godot/imported/survivor1_gun.png-b493667cdfffc07037456b660d48a3a0.ctex"
+uid="uid://dbfvkdv5bl28l"
+path="res://.godot/imported/square_shadow.png-94b03db0432fcfda92e74f80f373e3c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/survivor1_gun.png"
-dest_files=["res://.godot/imported/survivor1_gun.png-b493667cdfffc07037456b660d48a3a0.ctex"]
+source_file="res://assets/images/square_shadow.png"
+dest_files=["res://.godot/imported/square_shadow.png-94b03db0432fcfda92e74f80f373e3c5.ctex"]
 
 [params]
 

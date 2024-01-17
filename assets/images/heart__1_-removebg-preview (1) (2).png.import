@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgmw8xv4a513c"
-path="res://.godot/imported/soldier1_gun.png-e5aea298f6d39a3ee72dacd38246205c.ctex"
+uid="uid://rlhajd2ekdwk"
+path="res://.godot/imported/heart__1_-removebg-preview (1) (2).png-23cf69d23dc3a817844b390bcb82c801.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/soldier1_gun.png"
-dest_files=["res://.godot/imported/soldier1_gun.png-e5aea298f6d39a3ee72dacd38246205c.ctex"]
+source_file="res://assets/images/heart__1_-removebg-preview (1) (2).png"
+dest_files=["res://.godot/imported/heart__1_-removebg-preview (1) (2).png-23cf69d23dc3a817844b390bcb82c801.ctex"]
 
 [params]
 
