@@ -19,7 +19,7 @@ outline_color = Color(0.960784, 0.254902, 0.203922, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vrx1y"]
 font = ExtResource("4_8teep")
-font_size = 35
+font_size = 30
 font_color = Color(0.886275, 1, 0, 1)
 outline_size = 10
 outline_color = Color(0.207843, 0.207843, 0.207843, 1)
@@ -74,47 +74,124 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "CREDITS"
 label_settings = SubResource("LabelSettings_l1r86")
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="Control" type="Control" parent="TextureRect/MC/TextureRect/MC/VB"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="HB" type="HBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 300
-
-[node name="VB" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/HB"]
+[node name="Roles" type="HBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/HB/VB"]
+[node name="VB" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="VB" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Role"
 label_settings = SubResource("LabelSettings_vrx1y")
 
-[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/HB/VB"]
+[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Name"
+text = "Nguyen Anh Duy"
 label_settings = SubResource("LabelSettings_lcnes")
 
-[node name="VB2" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/HB"]
+[node name="VB2" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB"]
 layout_mode = 2
 
-[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/HB/VB2"]
+[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB2"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Role"
 label_settings = SubResource("LabelSettings_vrx1y")
 
-[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/HB/VB2"]
+[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB2"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Name"
+text = "Tran Nhat Tien"
+label_settings = SubResource("LabelSettings_lcnes")
+
+[node name="VB3" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Logo Designer
+UI Developer & Navigation"
+label_settings = SubResource("LabelSettings_vrx1y")
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB/VB3"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Ly Minh Hanh"
+label_settings = SubResource("LabelSettings_lcnes")
+
+[node name="VB2" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VB" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "UI Developer & Game Designer"
+label_settings = SubResource("LabelSettings_vrx1y")
+
+[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Ton Nu Ngoc Khanh"
+label_settings = SubResource("LabelSettings_lcnes")
+
+[node name="VB2" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2"]
+layout_mode = 2
+
+[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Programmer & NPC Maker"
+label_settings = SubResource("LabelSettings_vrx1y")
+
+[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tran Nguyen Quan"
+label_settings = SubResource("LabelSettings_lcnes")
+
+[node name="VB4" type="VBoxContainer" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2"]
+layout_mode = 2
+
+[node name="RoleLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Role"
+label_settings = SubResource("LabelSettings_vrx1y")
+
+[node name="NameLabel" type="Label" parent="TextureRect/MC/TextureRect/MC/VB/Roles/VB2/VB4"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Luu Van Thien Toan"
 label_settings = SubResource("LabelSettings_lcnes")
 
 [node name="ReturnButton" type="TextureButton" parent="TextureRect/MC/TextureRect/MC"]

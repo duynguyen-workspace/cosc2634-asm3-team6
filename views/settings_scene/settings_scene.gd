@@ -19,4 +19,8 @@ func _on_main_button_pressed():
 
 
 func _on_instructions_button_pressed():
-	GameManager.
+	GameManager.load_instructions_scene()
+
+
+func _on_credits_button_pressed():
+	GameManager.load_credits_scene()

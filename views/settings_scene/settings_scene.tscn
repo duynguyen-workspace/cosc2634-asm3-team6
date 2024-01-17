@@ -151,5 +151,6 @@ size_flags_vertical = 8
 texture_normal = ExtResource("3_spqkw")
 
 [connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MC2/HB/VB2/InstructionsButton" to="." method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MC2/HB/VB2/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MC2/HB/MuteVolumeButton" to="TextureRect/MC/TextureRect/MC/VB/MC2/HB/MuteVolumeButton" method="_on_pressed"]
 [connection signal="pressed" from="TextureRect/MC/TextureRect/MC/VB/MainButton" to="." method="_on_main_button_pressed"]
