@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://co12rg376fkxy"]
+[gd_scene load_steps=34 format=3 uid="uid://cgnmx56slajim"]
 
 [ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_x5grk"]
 [ext_resource type="Texture2D" uid="uid://68alvu0jtomb" path="res://assets/spritesheets/floor.png" id="2_nf7hq"]
