@@ -3086,8 +3086,17 @@ layer_1/tile_data = PackedInt32Array(1376286, 1179654, 28, 1376287, 1245190, 27,
 [node name="Player" parent="." instance=ExtResource("8_1pe8m")]
 position = Vector2(116, 175)
 
+[node name="Boss3" parent="." instance=ExtResource("9_hvpan")]
+position = Vector2(317, 584)
+scale = Vector2(0.4, 0.4)
+patrol_points = NodePath("../EnemyPaths/BossPath1")
+
+[node name="AnimatedSprite2D" parent="Boss3" index="0"]
+position = Vector2(0, -2.5)
+scale = Vector2(3, 3)
+
 [node name="Boss" parent="." instance=ExtResource("9_hvpan")]
-position = Vector2(996, 234)
+position = Vector2(773, 46)
 scale = Vector2(0.4, 0.4)
 patrol_points = NodePath("../EnemyPaths/BossPath1")
 
@@ -3095,12 +3104,23 @@ patrol_points = NodePath("../EnemyPaths/BossPath1")
 position = Vector2(0, -2.5)
 scale = Vector2(3, 3)
 
+[node name="Boss2" parent="." instance=ExtResource("9_hvpan")]
+position = Vector2(944, 604)
+scale = Vector2(0.4, 0.4)
+patrol_points = NodePath("../EnemyPaths/BossPath1")
+
+[node name="AnimatedSprite2D" parent="Boss2" index="0"]
+position = Vector2(0, -2.5)
+scale = Vector2(3, 3)
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_xw1f0")
 
 [node name="EnemyPaths" type="Node2D" parent="."]
 
 [node name="BossPath1" type="Node2D" parent="EnemyPaths"]
+visible = false
 
 [node name="Waypoint" parent="EnemyPaths/BossPath1" instance=ExtResource("10_jjs8e")]
 position = Vector2(995, 238)
@@ -3115,10 +3135,26 @@ position = Vector2(834, 395)
 stream = ExtResource("11_qog3s")
 autoplay = true
 
-[node name="Trash" parent="." instance=ExtResource("12_3ypos")]
+[node name="TrashList" type="Node2D" parent="."]
 position = Vector2(221, 176)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Trash" parent="TrashList" instance=ExtResource("12_3ypos")]
+position = Vector2(111, -13)
+
+[node name="Trash2" parent="TrashList" instance=ExtResource("12_3ypos")]
+position = Vector2(-118, 202)
+
+[node name="Trash3" parent="TrashList" instance=ExtResource("12_3ypos")]
+position = Vector2(36, 385)
+
+[node name="Trash4" parent="TrashList" instance=ExtResource("12_3ypos")]
+position = Vector2(266, -107)
+
+[node name="Trash5" parent="TrashList" instance=ExtResource("12_3ypos")]
+position = Vector2(528, 399)
+
+[node name="Trash6" parent="TrashList" instance=ExtResource("12_3ypos")]
+position = Vector2(641, 88)
 
 [node name="TrashBins" type="Node2D" parent="."]
 
@@ -3133,4 +3169,6 @@ trash_id = 1
 position = Vector2(222, 714)
 trash_id = 2
 
+[editable path="Boss3"]
 [editable path="Boss"]
+[editable path="Boss2"]

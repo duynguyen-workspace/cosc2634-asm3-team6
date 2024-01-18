@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cgnmx56slajim"]
+[gd_scene load_steps=35 format=3 uid="uid://cgnmx56slajim"]
 
 [ext_resource type="PackedScene" uid="uid://cwl0qpprxe68e" path="res://models/level_base/level_base.tscn" id="1_x5grk"]
 [ext_resource type="Texture2D" uid="uid://68alvu0jtomb" path="res://assets/spritesheets/floor.png" id="2_nf7hq"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/orangle_trashbin.png" id="16_julba"]
 [ext_resource type="Texture2D" path="res://assets/Spritesheet/Trash/green_trashbin.png" id="17_yfprn"]
 [ext_resource type="AudioStream" path="res://assets/sounds/Level Sounds/city_soundtra.mp3" id="19_kgmmk"]
+[ext_resource type="PackedScene" uid="uid://dh888i1kbadn7" path="res://models/objects/trash/trash.tscn" id="20_mw525"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8kjb"]
 texture = ExtResource("2_nf7hq")
@@ -31296,3 +31297,29 @@ position = Vector2(391, 382)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="5"]
 stream = ExtResource("19_kgmmk")
 autoplay = true
+
+[node name="TrashList" type="Node2D" parent="." index="6"]
+
+[node name="Trash" parent="TrashList" index="0" instance=ExtResource("20_mw525")]
+position = Vector2(76, 169)
+
+[node name="Trash2" parent="TrashList" index="1" instance=ExtResource("20_mw525")]
+position = Vector2(165, 407)
+
+[node name="Trash3" parent="TrashList" index="2" instance=ExtResource("20_mw525")]
+position = Vector2(592, 343)
+
+[node name="Trash4" parent="TrashList" index="3" instance=ExtResource("20_mw525")]
+position = Vector2(738, 201)
+
+[node name="Trash5" parent="TrashList" index="4" instance=ExtResource("20_mw525")]
+position = Vector2(307, 151)
+
+[node name="Trash6" parent="TrashList" index="5" instance=ExtResource("20_mw525")]
+position = Vector2(815, 354)
+
+[node name="Trash7" parent="TrashList" index="6" instance=ExtResource("20_mw525")]
+position = Vector2(571, 685)
+
+[node name="Trash8" parent="TrashList" index="7" instance=ExtResource("20_mw525")]
+position = Vector2(283, 674)
