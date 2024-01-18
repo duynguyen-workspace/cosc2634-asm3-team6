@@ -47,7 +47,6 @@ func spawn_civilian() -> void:
 
 
 func create_wp() -> void:
-	
 	for c in get_node(path_points).get_children():
 		_waypoints.append(c.global_position)
 	
